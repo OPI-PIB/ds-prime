@@ -1,0 +1,45 @@
+{
+	"name": "@opi_pib/ds-prime",
+	"version": "20.0.0",
+	"description": "Design system preset",
+	"type": "module",
+	"main": "src/index.mjs",
+	"exports": {
+		".": "./src/index.mjs",
+		"./locale": "./src/locale/index.mjs"
+	},
+	"files": [
+		"src",
+		"LICENSE",
+		"README.md"
+	],
+	"engines": {
+		"node": ">=24.0.0",
+		"npm": ">=10.8.0"
+	},
+	"scripts": {
+		"prepare": "husky"
+	},
+	"lint-staged": {
+		"*": "prettier -u -w"
+	},
+	"author": "Dawid Lubowiecki",
+	"license": "MIT",
+	"prettier": "@opi_pib/prettier-config-base",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/OPI-PIB/ds-prime.git"
+	},
+	"dependencies": {
+		"@primeuix/styled": "^0.7.0",
+		"@primeuix/themes": "^1.0.0",
+		"primeng": "^20.0.0"
+	},
+	"devDependencies": {
+		"@opi_pib/eslint-config-base": "^9.0.0",
+		"@opi_pib/prettier-config-base": "^1.0.0",
+		"husky": "^9.0.0",
+		"lint-staged": "^16.0.0",
+		"typescript": "^5.0.0"
+	}
+}
