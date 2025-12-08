@@ -1,6 +1,6 @@
 {
 	"name": "@opi_pib/ds-prime",
-	"version": "20.0.3",
+	"version": "21.0.0",
 	"description": "Design system preset",
 	"type": "module",
 	"main": "./dist/index.js",
@@ -38,7 +38,7 @@
 	},
 	"dependencies": {
 		"@primeuix/styled": "^0.7.0",
-		"@primeuix/themes": "^1.0.0"
+		"@primeuix/themes": "^2.0.0"
 	},
 	"devDependencies": {
 		"@opi_pib/eslint-config-base": "^9.0.0",
