@@ -1,0 +1,65 @@
+<h2>Checkbox</h2>
+<h3>Normal</h3>
+<div class="flex flex-col gap-4">
+	<div class="flex">
+		<p-checkbox inputId="x3" name="pizza" [binary]="true" [(ngModel)]="disabledChecked" />
+		<label for="x3" class="ml-2"> Normal </label>
+	</div>
+	<div class="flex">
+		<p-checkbox inputId="x3d" name="pizza" [binary]="true" [(ngModel)]="disabledChecked" disabled />
+		<label for="x3d" class="ml-2"> Normal </label>
+	</div>
+</div>
+<h3>With hint</h3>
+<div class="flex flex-col gap-4">
+	<div class="flex">
+		<p-checkbox inputId="x1" name="pizza" value="Mushroom 2" [binary]="true" />
+		<div class="label ml-2">
+			<label for="x1"> Normal </label>
+			<div class="text-b3-regular mt-2">Hint text <a href="#">link text</a></div>
+		</div>
+	</div>
+	<div class="flex">
+		<p-checkbox inputId="x1d" name="pizza" value="Mushroom 2" [binary]="true" disabled />
+		<div class="label ml-2">
+			<label for="x1d"> Normal </label>
+			<div class="text-b3-regular mt-2">Hint text <a href="#">link text</a></div>
+		</div>
+	</div>
+</div>
+<h3>Indeterminate</h3>
+<div class="flex flex-col gap-4">
+	<div class="flex">
+		<p-checkbox inputId="x4" name="pizza" value="Indeterminate" [binary]="true" [indeterminate]="true" />
+		<label for="x4" class="ml-2"> Indeterminate </label>
+	</div>
+	<div class="flex">
+		<p-checkbox inputId="x4d" name="pizza" value="Indeterminate" [binary]="true" [indeterminate]="true" disabled />
+		<label for="x4d" class="ml-2"> Indeterminate </label>
+	</div>
+</div>
+<h3>Invalid</h3>
+<div class="flex flex-col gap-4">
+	<div class="flex">
+		<p-checkbox inputId="x6" name="pizza" value="Invalid" [invalid]="true" />
+		<div class="label ml-2">
+			<label for="x6"> Invalid </label>
+			<div class="text-b3-regular mt-2">Hint text <a href="#">link text</a></div>
+		</div>
+	</div>
+	<div class="flex">
+		<p-checkbox
+			inputId="x6"
+			name="pizza"
+			value="Invalid"
+			[binary]="true"
+			[(ngModel)]="disabledChecked"
+			disabled
+			[invalid]="true"
+		/>
+		<div class="label ml-2">
+			<label for="x6d"> Invalid </label>
+			<div class="text-b3-regular mt-2">Hint text <a href="#">link text</a></div>
+		</div>
+	</div>
+</div>

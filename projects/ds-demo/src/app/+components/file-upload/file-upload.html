@@ -1,0 +1,29 @@
+<h2>File upload</h2>
+<h3>Basic</h3>
+<div class="flex gap-2">
+	<p-fileupload
+		#fu
+		mode="basic"
+		chooseLabel="Choose"
+		chooseIcon="ds-icon-plus"
+		name="demo[]"
+		accept="image/*"
+		maxFileSize="1000000"
+	/>
+	<p-button label="Upload" (onClick)="fu.upload()" severity="secondary" icon="ds-icon-upload" />
+</div>
+<h3>Advanced</h3>
+<div>
+	<p-fileupload
+		name="demo[]"
+		[multiple]="true"
+		accept="image/*"
+		maxFileSize="1000000"
+		mode="advanced"
+		cancelLabel="Cancel"
+	>
+		<ng-template #empty>
+			<div>Drag and drop files to here to upload.</div>
+		</ng-template>
+	</p-fileupload>
+</div>

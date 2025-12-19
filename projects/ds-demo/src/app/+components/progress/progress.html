@@ -1,0 +1,13 @@
+<h2>Progress</h2>
+<h3>Progress bar</h3>
+<p>Basic</p>
+<div class="mb-4 flex gap-4">
+	<p-progressbar [value]="value" class="w-3/4" />
+	<p-slider [(ngModel)]="value" class="w-1/4" />
+</div>
+
+<p>Indeterminate</p>
+<p-progressbar mode="indeterminate" class="w-hull mb-4" />
+
+<p>Spinner</p>
+<p-progress-spinner ariaLabel="loading" />

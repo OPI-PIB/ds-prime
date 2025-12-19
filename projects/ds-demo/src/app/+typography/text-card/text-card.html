@@ -1,0 +1,8 @@
+<p class="text-b3-medium">{{ label() }}</p>
+<p class="text-b3-regular">.{{ className() }}</p>
+<p [ngClass]="className()" class="mb-8">
+	<span contenteditable>{{ content }}</span>
+	@if (underline()) {
+		<u contenteditable>{{ content }}</u>
+	}
+</p>

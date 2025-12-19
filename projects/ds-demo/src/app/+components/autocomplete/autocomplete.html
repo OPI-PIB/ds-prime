@@ -1,0 +1,50 @@
+<h2>Autocomplete</h2>
+<h3>Basic</h3>
+<div class="laptop:grid-cols-3 grid gap-8">
+	<div>
+		<label for="select" class="text-b3-regular mb-1 block">Normal</label>
+		<p-autocomplete
+			inputId="select"
+			[(ngModel)]="selectedBasic"
+			[suggestions]="filteredCountries"
+			optionLabel="name"
+			(completeMethod)="filterCountry($event)"
+		/>
+	</div>
+	<div>
+		<label for="selectDisabled" class="text-b3-regular mb-1 block">Disabled</label>
+		<p-autocomplete
+			inputId="selectDisabled"
+			[(ngModel)]="selectedBasic"
+			[suggestions]="filteredCountries"
+			optionLabel="name"
+			(completeMethod)="filterCountry($event)"
+			disabled
+		/>
+	</div>
+	<div>
+		<label for="selectInvalid" class="text-b3-regular mb-1 block">Invalid</label>
+		<p-autocomplete
+			inputId="selectInvalid"
+			[(ngModel)]="selectedBasic"
+			[suggestions]="filteredCountries"
+			optionLabel="name"
+			(completeMethod)="filterCountry($event)"
+			[invalid]="true"
+		/>
+	</div>
+</div>
+<h3>Dropdown</h3>
+<div>
+	<label for="selectDropdown" class="text-b3-regular mb-1 block">Dropdown</label>
+	<p-autocomplete
+		inputId="selectDropdown"
+		[(ngModel)]="selectedBasic"
+		[dropdown]="true"
+		dropdownAriaLabel="Show list"
+		[forceSelection]="true"
+		[suggestions]="filteredCountries"
+		optionLabel="name"
+		(completeMethod)="filterCountry($event)"
+	/>
+</div>

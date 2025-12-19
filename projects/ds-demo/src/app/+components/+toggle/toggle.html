@@ -1,0 +1,39 @@
+<h2>Toggle</h2>
+<h3>Normal</h3>
+<div class="flex gap-2 mb-4 items-center">
+	<p-toggleswitch [(ngModel)]="checked" inputId="switch1" />
+	<label for="switch1">Normal</label>
+</div>
+<div class="flex gap-2 mb-4 items-center">
+	<p-toggleswitch [(ngModel)]="checked" inputId="switch2" disabled />
+	<label for="switch2">Disabled</label>
+</div>
+<div class="flex gap-2 mb-4 items-center">
+	<p-toggleswitch [(ngModel)]="checked" inputId="switch3" [invalid]="true" />
+	<label for="switch3">Invalid</label>
+</div>
+<h3>Icon</h3>
+<div class="flex gap-2 mb-4 items-center">
+	<p-toggleswitch [(ngModel)]="checked" inputId="switch1i">
+		<ng-template #handle let-checked="checked">
+			<i [ngClass]="[checked ? 'ds-icon-check' : 'ds-icon-x-small']"></i>
+		</ng-template>
+	</p-toggleswitch>
+	<label for="switch1i">Normal</label>
+</div>
+<div class="flex gap-2 mb-4 items-center">
+	<p-toggleswitch [(ngModel)]="checked" inputId="switch2i" disabled>
+		<ng-template #handle let-checked="checked">
+			<i [ngClass]="[checked ? 'ds-icon-check' : 'ds-icon-x-small']"></i>
+		</ng-template>
+	</p-toggleswitch>
+	<label for="switch2i">Disabled</label>
+</div>
+<div class="flex gap-2 mb-4 items-center">
+	<p-toggleswitch [(ngModel)]="checked" inputId="switch3i" [invalid]="true">
+		<ng-template #handle let-checked="checked">
+			<i [ngClass]="[checked ? 'ds-icon-check' : 'ds-icon-x-small']"></i>
+		</ng-template>
+	</p-toggleswitch>
+	<label for="switch3i">Invalid</label>
+</div>

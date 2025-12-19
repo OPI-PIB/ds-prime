@@ -1,0 +1,103 @@
+<h2>Input</h2>
+<h3>Normal</h3>
+<div class="grid-cols-1 grid gap-8">
+	<div>
+		<label for="inputNormal" class="text-b3-regular mb-1 block">Label name here</label>
+		<input type="text" pInputText icon="ds-icon-search" id="inputNormal" placeholder="Placeholder is here" />
+	</div>
+	<div>
+		<label for="inputDisabled" class="text-b3-regular mb-1 block">Disabled</label>
+		<input type="text" pInputText icon="ds-icon-search" id="inputDisabled" placeholder="Placeholder is here" disabled />
+	</div>
+	<div>
+		<label for="inputInvalid" class="text-b3-regular mb-1 block">Invalid</label>
+		<input
+			type="text"
+			pInputText
+			icon="ds-icon-search"
+			id="inputInvalid"
+			placeholder="Placeholder is here"
+			[invalid]="true"
+		/>
+		<p-message severity="error" variant="simple" size="small" icon="ds-icon-alert-circle" class="mt-1"
+			>Error message is here</p-message
+		>
+	</div>
+</div>
+<h3>Icon</h3>
+<div class="grid-cols-1 grid gap-8">
+	<div>
+		<label for="inputNormali" class="text-b3-regular mb-1 block">Label name here</label>
+		<div class="text-b3-regular text-neutral-500 mb-1">
+			Help text can be found here Help text can be found here Help text can be found here Help text can
+		</div>
+		<p-iconfield>
+			<p-inputicon class="ds-icon-search" />
+			<input type="search" pInputText id="inputNormali" placeholder="Placeholder is here" />
+		</p-iconfield>
+	</div>
+	<div>
+		<label for="inputDisabledi" class="text-b3-regular mb-1 block">Disabled</label>
+		<div class="text-b3-regular text-neutral-500 mb-1">
+			Help text can be found here Help text can be found here Help text can be found here Help text can
+		</div>
+		<p-iconfield>
+			<p-inputicon class="ds-icon-search" />
+			<input type="search" pInputText id="inputDisabledi" placeholder="Placeholder is here" disabled />
+		</p-iconfield>
+	</div>
+	<div>
+		<label for="inputInvalidi" class="text-b3-regular mb-1 block">Invalid</label>
+		<div class="text-b3-regular text-neutral-500 mb-1">
+			Help text can be found here Help text can be found here Help text can be found here Help text can
+		</div>
+		<p-iconfield>
+			<p-inputicon class="ds-icon-search" />
+			<input type="search" pInputText id="inputInvalidi" placeholder="Placeholder is here" [invalid]="true" />
+		</p-iconfield>
+		<p-message severity="error" variant="simple" size="small" icon="ds-icon-alert-circle" class="mt-1"
+			>Error message is here</p-message
+		>
+	</div>
+</div>
+<h3>Number</h3>
+<div class="grid-cols-1 grid gap-8">
+	<div>
+		<label for="inputNormaln" class="text-b3-regular mb-1 block">Label name here</label>
+		<p-inputnumber
+			mode="decimal"
+			[showButtons]="true"
+			inputId="inputNormaln"
+			[min]="0"
+			[max]="100"
+			placeholder="Placeholder is here"
+		/>
+	</div>
+	<div>
+		<label for="inputDisabledn" class="text-b3-regular mb-1 block">Disabled</label>
+		<p-inputnumber
+			mode="decimal"
+			[showButtons]="true"
+			inputId="inputDisabledn"
+			[min]="0"
+			[max]="100"
+			placeholder="Placeholder is here"
+			disabled
+		/>
+	</div>
+	<div>
+		<label for="inputInvalidn" class="text-b3-regular mb-1 block">Invalid</label>
+		<p-inputnumber
+			mode="decimal"
+			[showButtons]="true"
+			inputId="inputInvalidn"
+			[min]="0"
+			[max]="100"
+			placeholder="Placeholder is here"
+			[invalid]="true"
+		/>
+		<p-message severity="error" variant="simple" size="small" icon="ds-icon-alert-circle" class="mt-1"
+			>Error message is here</p-message
+		>
+	</div>
+</div>

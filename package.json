@@ -1,6 +1,6 @@
 {
 	"name": "@opi_pib/ds-prime",
-	"version": "21.0.2",
+	"version": "21.0.3",
 	"description": "Design system preset",
 	"type": "module",
 	"main": "./dist/index.js",

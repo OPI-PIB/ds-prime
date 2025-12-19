@@ -1,0 +1,94 @@
+<h2>Table</h2>
+<div class="mb-4 flex justify-center">
+	<p-selectbutton
+		[options]="sizes"
+		[(ngModel)]="selectedSize"
+		[multiple]="false"
+		optionLabel="name"
+		optionValue="value"
+	/>
+</div>
+<p-table
+	[value]="products()"
+	[rowHover]="true"
+	stripedRows
+	sortField="name"
+	[sortOrder]="-1"
+	dataKey="id"
+	[paginator]="true"
+	[rows]="5"
+	[rowsPerPageOptions]="[5, 10, 20]"
+	[size]="selectedSize"
+>
+	<ng-template #header>
+		<tr>
+			<th style="width: 3rem">
+				<p-tableHeaderCheckbox ariaLabel="Zaznacz wszystko" />
+			</th>
+			<th pSortableColumn="code">
+				<div class="flex items-center gap-2">
+					Code
+					<p-sortIcon field="code" />
+				</div>
+			</th>
+			<th pSortableColumn="name">
+				<div class="flex items-center gap-2">
+					Name
+					<p-sortIcon field="name" />
+				</div>
+			</th>
+			<th pSortableColumn="category">
+				<div class="flex items-center gap-2">
+					Category
+					<p-sortIcon field="category" />
+				</div>
+			</th>
+			<th pSortableColumn="quantity">
+				<div class="flex items-center gap-2">
+					Quantity
+					<p-sortIcon field="quantity" />
+				</div>
+			</th>
+			<th>Actions</th>
+			<th width="50px"></th>
+		</tr>
+	</ng-template>
+	<ng-template #body let-product let-expanded="expanded">
+		<tr>
+			<td style="width: 3rem">
+				<p-tableCheckbox [value]="product" [ariaLabel]="product.name" />
+			</td>
+			<td>
+				{{ product.code }}
+			</td>
+			<td>{{ product.name }}</td>
+			<td>{{ product.category }}</td>
+			<td>{{ product.quantity }}</td>
+			<td>
+				<div class="flex gap-2">
+					<p-button><i class="ds-icon-edit"></i> edit</p-button>
+					<p-button severity="danger"><i class="ds-icon-x-big"></i> delete</p-button>
+					<p-button severity="info"><i class="ds-icon-chevron-down"></i> details</p-button>
+				</div>
+			</td>
+			<td>
+				<p-button
+					type="button"
+					pRipple
+					[pRowToggler]="product"
+					[text]="true"
+					severity="secondary"
+					[rounded]="true"
+					[icon]="expanded ? 'ds-icon-chevron-up' : 'ds-icon-chevron-down'"
+					[attr.aria-expanded]="expanded"
+					[ariaLabel]="expanded ? 'zwiń' : 'rozwiń'"
+				/>
+			</td>
+		</tr>
+	</ng-template>
+	<ng-template #expandedrow let-product>
+		<tr>
+			<td colspan="7">Description of item {{ product.name }}</td>
+		</tr>
+	</ng-template>
+</p-table>

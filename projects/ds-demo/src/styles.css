@@ -1,0 +1,25 @@
+@import 'tailwindcss' layer(tw);
+@import '@opi_pib/ds/tailwind';
+
+body {
+	@apply text-black  bg-neutral-50;
+
+	font-family: var(--font-sans);
+}
+
+h1 {
+	@apply text-h2-semibold my-4;
+}
+
+h2 {
+	@apply text-h3-semibold my-4;
+}
+
+h3 {
+	@apply text-b1-medium my-4;
+}
+
+.p-button.active {
+	background-color: light-dark(var(--color-neutral-900), var(--color-neutral-100));
+	color: light-dark(var(--color-neutral-100), var(--color-neutral-900));
+}

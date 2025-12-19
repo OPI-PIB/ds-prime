@@ -5,22 +5,13 @@ export const DsPrime = definePreset(Aura, {
 	name: 'ds-prime',
 	css: `
 :root,
-:host {
-	--radius-default: var(--radius-xs);
-	--disabled-text: var(--color-neutral-800);
-	--disabled-bg: var(--color-neutral-200);
-	--disabled-border: var(--color-neutral-200);
-	--invalid-text: light-dark(var(--color-error-800), var(--color-error-500));
-	--invalid-bg: light-dark(var(--color-error-800), var(--color-error-500));
-	--invalid-border: light-dark(var(--color-error-800), var(--color-error-500));
-	--invalid-bg-hover: light-dark(var(--color-error-900), var(--color-error-400));
-	--invalid-bg-active: light-dark(var(--color-error-950), var(--color-error-300));
-	--invalid-border-hover: light-dark(var(--color-error-900), var(--color-error-400));
-	--invalid-border-active: light-dark(var(--color-error-950), var(--color-error-300));
+:host { 
+	--border-width: 2px; 
 }
 	`,
 	primitive: {
 		neutral: {
+			0: 'var(--color-neutral-0)',
 			50: 'var(--color-neutral-50)',
 			100: 'var(--color-neutral-100)',
 			200: 'var(--color-neutral-200)',
@@ -34,19 +25,21 @@ export const DsPrime = definePreset(Aura, {
 			950: 'var(--color-neutral-950)'
 		},
 		red: {
-			50: 'var(--color-error-50)',
-			100: 'var(--color-error-100)',
-			200: 'var(--color-error-200)',
-			300: 'var(--color-error-300)',
-			400: 'var(--color-error-400)',
-			500: 'var(--color-error-500)',
-			600: 'var(--color-error-600)',
-			700: 'var(--color-error-700)',
-			800: 'var(--color-error-800)',
-			900: 'var(--color-error-900)',
-			950: 'var(--color-error-950)'
+			0: 'var(--color-neutral-0)',
+			50: 'var(--color-danger-50)',
+			100: 'var(--color-danger-100)',
+			200: 'var(--color-danger-200)',
+			300: 'var(--color-danger-300)',
+			400: 'var(--color-danger-400)',
+			500: 'var(--color-danger-500)',
+			600: 'var(--color-danger-600)',
+			700: 'var(--color-danger-700)',
+			800: 'var(--color-danger-800)',
+			900: 'var(--color-danger-900)',
+			950: 'var(--color-danger-950)'
 		},
 		orange: {
+			0: 'var(--color-neutral-0)',
 			50: 'var(--color-warning-50)',
 			100: 'var(--color-warning-100)',
 			200: 'var(--color-warning-200)',
@@ -60,6 +53,7 @@ export const DsPrime = definePreset(Aura, {
 			950: 'var(--color-warning-950)'
 		},
 		green: {
+			0: 'var(--color-neutral-0)',
 			50: 'var(--color-success-50)',
 			100: 'var(--color-success-100)',
 			200: 'var(--color-success-200)',
@@ -73,6 +67,7 @@ export const DsPrime = definePreset(Aura, {
 			950: 'var(--color-success-950)'
 		},
 		blue: {
+			0: 'var(--color-neutral-0)',
 			50: 'var(--color-info-50)',
 			100: 'var(--color-info-100)',
 			200: 'var(--color-info-200)',
@@ -106,8 +101,6 @@ export const DsPrime = definePreset(Aura, {
 	--button-cta-text-size: var(--text-b1--size);
 	--button-cta-py: 12px;
 	--button-cta-px: 15px;
-	--button-border-radius: var(--radius-default);
-	--button-border-width: 2px;
 	--button-icon-only-width: 48px;
 	--button-cta-icon-only-width: 56px;
 }
@@ -122,27 +115,27 @@ export const DsPrime = definePreset(Aura, {
 }
 
 .p-button:disabled { 
-	color: var(--disabled-text);
+	color: var(--color-text-secondary);
 }
 
 .p-button:not(.p-button-text):disabled { 
-	border-color: var(--disabled-border);
+	border-color: var(--color-stroke-disabled);
 }
 
 .p-button:not(.p-button-outlined, .p-button-text):disabled,
 .p-button.p-button-outlined.p-button-icon-only:disabled {
-	background-color: var(--disabled-bg);
+	background-color: var(--color-fill-primary-disabled);
 }
 
 .p-button.p-button-outlined {
 	--p-button-padding-y: 10px;
 	--p-button-lg-padding-y: 11px;
 
-	border-width: var(--button-border-width);
+	border-width: var(--border-width);
 }
 
 .p-button.p-button-outlined.p-button-icon-only {
-	background-color: light-dark(var(--color-white), var(--color-neutral-50));
+	background-color: var(--color-neutral-0);
 }
 
 .p-button.p-button-outlined:not(.p-button-icon-only) {
@@ -154,7 +147,7 @@ export const DsPrime = definePreset(Aura, {
 
 .p-button.p-button-outlined:not(:disabled):hover,
 .p-button.p-button-outlined:not(:disabled):active {
-	border-width: var(--button-border-width);
+	border-width: var(--border-width);
 }
 
 @media (width > 45rem) {
@@ -164,23 +157,23 @@ export const DsPrime = definePreset(Aura, {
 }
 
 .p-button.p-button-outlined:not(:disabled):hover {
-	--p-button-outlined-primary-color: light-dark(var(--color-primary-600), var(--color-primary-400));
-	--p-button-outlined-danger-color: light-dark(var(--color-error-700), var(--color-error-400));
+	--p-button-outlined-primary-color: var(--color-text-primary-hover);
+	--p-button-outlined-danger-color: var(--color-text-danger-hover);
 }
 
 .p-button.p-button-outlined:not(:disabled):active {
-	--p-button-outlined-primary-color: light-dark(var(--color-primary-800), var(--color-primary-600));
-	--p-button-outlined-danger-color: light-dark(var(--color-error-900), var(--color-error-600));
+	--p-button-outlined-primary-color: var(--color-text-primary-pressed);
+	--p-button-outlined-danger-color: var(--color-text-danger-pressed);
 }
 
 .p-button.p-button-text:not(:disabled):hover {
-	--p-button-text-primary-color: light-dark(var(--color-primary-600), var(--color-primary-400));
-	--p-button-text-danger-color: light-dark(var(--color-error-700), var(--color-error-400));
+	--p-button-text-primary-color: var(--color-text-primary-hover);
+	--p-button-text-danger-color: var(--color-text-danger-hover);
 }
 
 .p-button.p-button-text:not(:disabled):active {
-	--p-button-text-primary-color: light-dark(var(--color-primary-800), var(--color-primary-600));
-	--p-button-text-danger-color: light-dark(var(--color-error-900), var(--color-error-600));
+	--p-button-text-primary-color: var(--color-text-primary-pressed);
+	--p-button-text-danger-color: var(--color-text-danger-pressed);
 }
 
 .p-button-text,
@@ -212,12 +205,12 @@ a:not(.p-button):hover {
 a:not(.p-button):active {
 	color: var(--p-button-link-active-color);
 }
-`,
+			`,
 			root: {
 				label: {
 					fontWeight: 'var(--button-font-weight)'
 				},
-				borderRadius: 'var(--button-border-radius)',
+				borderRadius: 'var(--radius-default)',
 				paddingY: 'var(--button-py)',
 				paddingX: 'var(--button-px)',
 				iconOnlyWidth: 'var(--button-icon-only-width)',
@@ -232,149 +225,149 @@ a:not(.p-button):active {
 				light: {
 					root: {
 						primary: {
-							color: 'var(--color-white)',
-							hoverColor: 'var(--color-white)',
-							activeColor: 'var(--color-white)',
-							background: 'var(--color-primary-700)',
-							hoverBackground: 'var(--color-primary-600)',
-							activeBackground: 'var(--color-primary-800)',
-							borderColor: 'var(--color-primary-700)',
-							hoverBorderColor: 'var(--color-primary-600)',
-							activeBorderColor: 'var(--color-primary-800)',
+							color: 'var(--color-text-primary-on-fill)',
+							hoverColor: 'var(--color-text-primary-on-fill)',
+							activeColor: 'var(--color-text-primary-on-fill)',
+							background: 'var(--color-fill-primary-default)',
+							hoverBackground: 'var(--color-fill-primary-hover)',
+							activeBackground: 'var(--color-fill-primary-pressed)',
+							borderColor: 'var(--color-fill-primary-default)',
+							hoverBorderColor: 'var(--color-fill-primary-hover)',
+							activeBorderColor: 'var(--color-fill-primary-pressed)',
 							focusRing: {
 								color: 'var(--color-focus-ring)'
 							}
 						},
 						danger: {
-							color: 'var(--color-error-800)',
-							hoverColor: 'var(--color-error-900)',
-							activeColor: 'var(--color-error-950)',
-							background: 'var(--color-error-200)',
-							hoverBackground: 'var(--color-error-300)',
-							activeBackground: 'var(--color-error-400)',
-							borderColor: 'var(--color-error-200)',
-							hoverBorderColor: 'var(--color-error-300)',
-							activeBorderColor: 'var(--color-error-400)',
+							color: 'var(--color-text-danger-default)',
+							hoverColor: 'var(--color-text-danger-hover)',
+							activeColor: 'var(--color-text-danger-pressed)',
+							background: 'var(--color-fill-danger-default)',
+							hoverBackground: 'var(--color-fill-danger-hover)',
+							activeBackground: 'var(--color-fill-danger-pressed)',
+							borderColor: 'var(--color-fill-danger-default)',
+							hoverBorderColor: 'var(--color-fill-danger-hover)',
+							activeBorderColor: 'var(--color-fill-danger-pressed)',
 							focusRing: {
-								color: 'var(--color-error-950)'
+								color: 'var(--color-danger-950)'
 							}
 						}
 					},
 					outlined: {
 						plain: {
-							hoverBackground: 'var(--color-white)',
-							activeBackground: 'var(--color-white)',
+							hoverBackground: 'var(--color-neutral-0)',
+							activeBackground: 'var(--color-neutral-0)',
 							borderColor: 'currentcolor',
-							color: 'var(--color-primary-700)'
+							color: 'var(--color-text-primary-default)'
 						},
 						primary: {
-							hoverBackground: 'var(--color-white)',
-							activeBackground: 'var(--color-white)',
+							hoverBackground: 'var(--color-neutral-0)',
+							activeBackground: 'var(--color-neutral-0)',
 							borderColor: 'currentcolor',
-							color: 'var(--color-primary-700)'
+							color: 'var(--color-text-primary-default)'
 						},
 						danger: {
-							hoverBackground: 'var(--color-white)',
-							activeBackground: 'var(--color-white)',
+							hoverBackground: 'var(--color-neutral-0)',
+							activeBackground: 'var(--color-neutral-0)',
 							borderColor: 'currentcolor',
-							color: 'var(--color-error-800)'
+							color: 'var(--color-text-danger-default)'
 						}
 					},
 					text: {
 						plain: {
-							color: 'var(--color-primary-700)',
+							color: 'var(--color-fill-primary-default)',
 							hoverBackground: 'transparent',
 							activeBackground: 'transparent'
 						},
 						primary: {
-							color: 'var(--color-primary-700)',
+							color: 'var(--color-fill-primary-default)',
 							hoverBackground: 'transparent',
 							activeBackground: 'transparent'
 						},
 						danger: {
-							color: 'var(--color-error-800)',
+							color: 'var(--color-text-danger-default)',
 							hoverBackground: 'transparent',
 							activeBackground: 'transparent'
 						}
 					},
 					link: {
-						color: 'var(--color-primary-700)',
-						hoverColor: 'var(--color-primary-600)',
-						activeColor: 'var(--color-primary-800)'
+						color: 'var(--color-fill-primary-default)',
+						hoverColor: 'var(--color-text-primary-hover)',
+						activeColor: 'var(--color-text-primary-pressed)'
 					}
 				},
 				dark: {
 					root: {
 						primary: {
-							color: 'var(--color-white)',
-							hoverColor: 'var(--color-white)',
-							activeColor: 'var(--color-white)',
-							background: 'var(--color-primary-700)',
-							hoverBackground: 'var(--color-primary-600)',
-							activeBackground: 'var(--color-primary-800)',
-							borderColor: 'var(--color-primary-700)',
-							hoverBorderColor: 'var(--color-primary-600)',
-							activeBorderColor: 'var(--color-primary-800)',
+							color: 'var(--color-text-primary-on-fill)',
+							hoverColor: 'var(--color-text-primary-on-fill)',
+							activeColor: 'var(--color-text-primary-on-fill)',
+							background: 'var(--color-fill-primary-default)',
+							hoverBackground: 'var(--color-fill-primary-hover)',
+							activeBackground: 'var(--color-fill-primary-pressed)',
+							borderColor: 'var(--color-fill-primary-default)',
+							hoverBorderColor: 'var(--color-fill-primary-hover)',
+							activeBorderColor: 'var(--color-fill-primary-pressed)',
 							focusRing: {
 								color: 'var(--color-focus-ring)'
 							}
 						},
 						danger: {
-							color: 'var(--color-error-800)',
-							hoverColor: 'var(--color-error-900)',
-							activeColor: 'var(--color-error-950)',
-							background: 'var(--color-error-200)',
-							hoverBackground: 'var(--color-error-300)',
-							activeBackground: 'var(--color-error-400)',
-							borderColor: 'var(--color-error-200)',
-							hoverBorderColor: 'var(--color-error-300)',
-							activeBorderColor: 'var(--color-error-400)',
+							color: 'var(--color-text-danger-default)',
+							hoverColor: 'var(--color-text-danger-hover)',
+							activeColor: 'var(--color-text-danger-pressed)',
+							background: 'var(--color-fill-danger-default)',
+							hoverBackground: 'var(--color-fill-danger-hover)',
+							activeBackground: 'var(--color-fill-danger-pressed)',
+							borderColor: 'var(--color-fill-danger-default)',
+							hoverBorderColor: 'var(--color-fill-danger-hover)',
+							activeBorderColor: 'var(--color-fill-danger-pressed)',
 							focusRing: {
-								color: 'var(--color-error-950)'
+								color: 'var(--color-danger-950)'
 							}
 						}
 					},
 					outlined: {
 						plain: {
-							hoverBackground: 'var(--color-neutral-50)',
-							activeBackground: 'var(--color-neutral-50)',
+							hoverBackground: 'var(--color-neutral-0)',
+							activeBackground: 'var(--color-neutral-0)',
 							borderColor: 'currentcolor',
-							color: 'var(--color-primary-500)'
+							color: 'var(--color-text-primary-default)'
 						},
 						primary: {
-							hoverBackground: 'var(--color-neutral-50)',
-							activeBackground: 'var(--color-neutral-50)',
+							hoverBackground: 'var(--color-neutral-0)',
+							activeBackground: 'var(--color-neutral-0)',
 							borderColor: 'currentcolor',
-							color: 'var(--color-primary-500)'
+							color: 'var(--color-text-primary-default)'
 						},
 						danger: {
-							hoverBackground: 'var(--color-neutral-50)',
-							activeBackground: 'var(--color-neutral-50)',
+							hoverBackground: 'var(--color-neutral-0)',
+							activeBackground: 'var(--color-neutral-0)',
 							borderColor: 'currentcolor',
-							color: 'var(--color-error-500)'
+							color: 'var(--color-text-danger-default)'
 						}
 					},
 					text: {
 						plain: {
-							color: 'var(--color-primary-500)',
+							color: 'var(--color-fill-primary-default)',
 							hoverBackground: 'transparent',
 							activeBackground: 'transparent'
 						},
 						primary: {
-							color: 'var(--color-primary-500)',
+							color: 'var(--color-fill-primary-default)',
 							hoverBackground: 'transparent',
 							activeBackground: 'transparent'
 						},
 						danger: {
-							color: 'var(--color-error-500)',
+							color: 'var(--color-text-danger-default)',
 							hoverBackground: 'transparent',
 							activeBackground: 'transparent'
 						}
 					},
 					link: {
-						color: 'var(--color-primary-500)',
-						hoverColor: 'var(--color-primary-400)',
-						activeColor: 'var(--color-primary-600)'
+						color: 'var(--color-fill-primary-default)',
+						hoverColor: 'var(--color-text-primary-hover)',
+						activeColor: 'var(--color-text-primary-pressed)'
 					}
 				}
 			}
@@ -403,45 +396,70 @@ a:not(.p-button):active {
 	width: 200%;
 }
 
-.p-checkbox-box {
-	--p-checkbox-icon-disabled-color: var(--disabled-text);
-	--p-checkbox-disabled-background: var(--disabled-bg);
-
+.p-checkbox-box { 
 	margin-top: var(--checkbox-mt);
-	border-width: 2px;
-}
-
-.p-checkbox.p-invalid ~ .label,
-.p-checkbox.p-invalid ~ label {
-	color: var(--invalid-text);
-}
+	border-width: var(--border-width);
+} 
 
 .p-checkbox.p-invalid {
-	--p-checkbox-focus-ring-color: var(--invalid-border-active);
-	--p-checkbox-focus-border-color: var(--invalid-border);
-	--p-checkbox-checked-focus-border-color: var(--invalid-border);
-	--p-checkbox-checked-background: var(--invalid-bg);
-	--p-checkbox-hover-border-color: var(--invalid-border-hover);
-	--p-checkbox-checked-hover-background: var(--invalid-bg-hover);
-	--p-checkbox-checked-hover-border-color: var(--invalid-border-hover);
-	
+	--p-checkbox-hover-border-color: var(--color-text-danger-hover);
+	--p-checkbox-checked-background: var(--color-text-danger-default);
+	--p-checkbox-checked-hover-background: var(--color-text-danger-hover);
+	--p-checkbox-checked-hover-border-color: var(--color-text-danger-hover);
+	--p-checkbox-focus-ring-color: var(--color-danger-950);
+	--p-checkbox-focus-border-color: var(--color-text-danger-default);
+	--p-checkbox-checked-focus-border-color: var(--color-text-danger-default);
 }
 			`,
 			root: {
 				shadow: 'none',
-				borderRadius: 'var(--radius-default)',
-				background: 'var(--color-neutral-50)',
-				borderColor: 'var(--color-neutral-950)',
-				hoverBorderColor: 'var(--color-primary-600)',
-				focusBorderColor: 'var(--color-primary-800)',
-				invalidBorderColor: 'var(--invalid-border)',
-				disabledBackground: 'var(--disabled-bg)',
-				checkedDisabledBorderColor: 'var(--disabled-border)',
-				checkedBackground: 'var(--color-primary-700)',
-				checkedBorderColor: 'var(--color-primary-700)',
-				checkedHoverBorderColor: 'var(--color-primary-600)',
-				checkedFocusBorderColor: 'var(--color-primary-800)',
-				checkedHoverBackground: 'var(--color-primary-600)'
+				borderRadius: 'var(--radius-default)'
+			},
+			colorScheme: {
+				light: {
+					root: {
+						background: 'var(--color-neutral-0)',
+						checkedBackground: 'var(--color-fill-primary-default)',
+						checkedHoverBackground: 'var(--color-fill-primary-hover)',
+						borderColor: 'var(--color-stroke-default)',
+						hoverBorderColor: 'var(--color-fill-primary-hover)',
+						checkedBorderColor: 'var(--color-fill-primary-default)',
+						checkedHoverBorderColor: 'var(--color-fill-primary-hover)',
+						invalidBorderColor: 'var(--color-text-danger-default)',
+						focusBorderColor: 'var(--color-fill-primary-pressed)',
+						checkedFocusBorderColor: 'var(--color-fill-primary-pressed)',
+						disabledBackground: 'var(--color-fill-primary-disabled)',
+						checkedDisabledBorderColor: 'var(--color-fill-primary-disabled)'
+					},
+					icon: {
+						color: 'var(--color-text-primary)',
+						disabledColor: 'var(--color-text-secondary)',
+						checkedColor: 'var(--color-text-inverse)',
+						checkedHoverColor: 'var(--color-text-inverse)'
+					}
+				},
+				dark: {
+					root: {
+						background: 'var(--color-neutral-0)',
+						checkedBackground: 'var(--color-fill-primary-default)',
+						checkedHoverBackground: 'var(--color-fill-primary-hover)',
+						borderColor: 'var(--color-stroke-default)',
+						hoverBorderColor: 'var(--color-fill-primary-hover)',
+						checkedBorderColor: 'var(--color-fill-primary-default)',
+						checkedHoverBorderColor: 'var(--color-fill-primary-hover)',
+						invalidBorderColor: 'var(--color-text-danger-default)',
+						focusBorderColor: 'var(--color-fill-primary-pressed)',
+						checkedFocusBorderColor: 'var(--color-fill-primary-pressed)',
+						disabledBackground: 'var(--color-fill-primary-disabled)',
+						checkedDisabledBorderColor: 'var(--color-fill-primary-disabled)'
+					},
+					icon: {
+						color: 'var(--color-text-primary)',
+						disabledColor: 'var(--color-text-secondary)',
+						checkedColor: 'var(--color-text-inverse)',
+						checkedHoverColor: 'var(--color-text-inverse)'
+					}
+				}
 			}
 		},
 		radiobutton: {
@@ -464,50 +482,208 @@ a:not(.p-button):active {
 	}
 }
 
-.p-radiobutton-box {
-	border-width: 2px;
-	margin-top: var(--radiobutton-mt);
+.p-radiobutton-input {
+	height: 200%;
+	margin: -10px;
+	width: 200%;
 }
 
-.p-radiobutton.p-invalid ~ .label,
-.p-radiobutton.p-invalid ~ label {
-	color: var(--invalid-text);
+.p-radiobutton-box {
+	margin-top: var(--radiobutton-mt);
+	border-width: var(--border-width);
 }
 
 .p-radiobutton.p-invalid {
-	--p-radiobutton-focus-ring-color: var(--invalid-border-active);
-	--p-radiobutton-hover-border-color: var(--invalid-border-hover);
-	--p-radiobutton-checked-focus-border-color: var(--invalid-border-hover);
-	--p-radiobutton-icon-checked-color: var(--invalid-border);
-	--p-radiobutton-checked-hover-border-color: var(--invalid-border-hover);
-	--p-radiobutton-icon-checked-hover-color: var(--invalid-border-hover);
+	--p-radiobutton-hover-border-color: var(--color-text-danger-hover);
+	--p-radiobutton-checked-hover-border-color: var(--color-text-danger-hover);
+	--p-radiobutton-checked-focus-border-color: var(--color-text-danger-default);
+	--p-radiobutton-icon-checked-color: var(--color-text-danger-default);
+	--p-radiobutton-icon-checked-hover-color: var(--color-text-danger-hover);
+	--p-radiobutton-focus-ring-color: var(--color-danger-950);
 }
 			`,
 			icon: {
-				size: '10px',
-				checkedColor: 'var(--color-primary-700)',
-				checkedHoverColor: 'var(--color-primary-600)',
-				disabledColor: 'var(--disabled-border)'
+				checkedColor: 'var(--color-text-primary-default)',
+				checkedHoverColor: 'var(--color-text-primary-hover)',
+				disabledColor: 'var(--color-text-secondary)'
 			},
 			root: {
 				shadow: 'none',
-				background: 'var(--color-neutral-50)',
+				background: 'var(--color-neutral-0)',
+				borderColor: 'var(--color-neutral-950)',
+				hoverBorderColor: 'var(--color-fill-primary-hover)',
+				focusBorderColor: 'var(--color-fill-primary-pressed)',
+				checkedBackground: 'var(--color-neutral-0)',
+				checkedHoverBackground: 'var(--color-neutral-0)',
+				checkedBorderColor: 'var(--color-fill-primary-default)',
+				checkedHoverBorderColor: 'var(--color-fill-primary-hover)',
+				checkedFocusBorderColor: 'var(--color-fill-primary-pressed)',
+				invalidBorderColor: 'var(--color-text-danger-default)',
+				disabledBackground: 'var(--color-fill-primary-disabled)',
+				checkedDisabledBorderColor: 'var(--color-fill-primary-disabled)'
+			}
+		},
+		toggleswitch: {
+			css: `
+:root,
+:host {
+	--p-toggleswitch-width: 54px;
+	--p-toggleswitch-height: 32px;
+	--p-toggleswitch-handle-size: 24px;
+}
+
+@media (width > 45rem) {
+	:root,
+	:host {
+		--p-toggleswitch-height: 30px;
+		--p-toggleswitch-handle-size: 22px;
+	}
+}
+	
+
+.p-toggleswitch.p-disabled {
+	--p-toggleswitch-border-color: var(--color-text-primary-disabled);
+	--p-toggleswitch-checked-border-color: var(--color-text-primary-disabled);
+	--p-toggleswitch-handle-checked-color: var(--color-text-primary-on-fill);
+}
+
+.p-toggleswitch.p-invalid {
+	--p-toggleswitch-focus-ring-color: var(--color-danger-950);
+	--p-toggleswitch-checked-background: var(--color-text-danger-default);
+	--p-toggleswitch-handle-background: var(--color-text-danger-default);
+}
+			`,
+			root: {
+				borderWidth: 'var(--border-width)'
+			},
+			colorScheme: {
+				light: {
+					handle: {
+						color: 'var(--color-text-primary-on-fill)',
+						hoverColor: 'var(--color-text-primary-on-fill)',
+						checkedColor: 'var(--color-text-secondary)',
+						checkedHoverColor: 'var(--color-text-secondary)',
+						background: 'var(--color-text-secondary)',
+						hoverBackground: 'var(--color-text-secondary)',
+						checkedBackground: 'var(--color-neutral-0)',
+						checkedHoverBackground: 'var(--color-neutral-0)',
+						disabledBackground: 'var(--color-text-secondary)'
+					},
+					root: {
+						borderColor: 'var(--color-stroke-default)',
+						hoverBorderColor: 'var(--color-fill-primary-hover)',
+						invalidBorderColor: 'var(--color-text-danger-default)',
+						checkedBorderColor: 'var(--color-fill-primary-default)',
+						checkedHoverBorderColor: 'var(--color-fill-primary-hover)',
+						background: 'var(--color-neutral-0)',
+						hoverBackground: 'var(--color-neutral-0)',
+						checkedBackground: 'var(--color-fill-primary-default)',
+						checkedHoverBackground: 'var(--color-fill-primary-hover)',
+						disabledBackground: 'var(--color-fill-primary-disabled)'
+					}
+				},
+				dark: {
+					handle: {
+						color: 'var(--color-text-primary-on-fill)',
+						hoverColor: 'var(--color-text-primary-on-fill)',
+						checkedColor: 'var(--color-text-secondary)',
+						checkedHoverColor: 'var(--color-text-secondary)',
+						background: 'var(--color-text-secondary)',
+						hoverBackground: 'var(--color-text-secondary)',
+						checkedBackground: 'var(--color-neutral-0)',
+						checkedHoverBackground: 'var(--color-neutral-0)',
+						disabledBackground: 'var(--color-text-secondary)'
+					},
+					root: {
+						borderColor: 'var(--color-stroke-default)',
+						hoverBorderColor: 'var(--color-fill-primary-hover)',
+						invalidBorderColor: 'var(--color-text-danger-default)',
+						checkedBorderColor: 'var(--color-fill-primary-default)',
+						checkedHoverBorderColor: 'var(--color-fill-primary-hover)',
+						background: 'var(--color-neutral-0)',
+						hoverBackground: 'var(--color-neutral-0)',
+						checkedBackground: 'var(--color-fill-primary-default)',
+						checkedHoverBackground: 'var(--color-fill-primary-hover)',
+						disabledBackground: 'var(--color-fill-primary-disabled)'
+					}
+				}
+			}
+		},
+		inputtext: {
+			css: `
+:root,
+:host {
+	--p-form-field-padding-y: 10px;
+	--p-form-field-padding-x: 10px;
+}
+
+@media (width > 45rem) {
+	:root,
+	:host {
+		--p-form-field-padding-y: 8px;
+		--p-form-field-padding-x: 10px; 
+	}
+}
+
+.p-inputtext {
+	border-width: var(--button-border-width);
+}
+
+.p-inputtext:disabled { 
+	--p-inputtext-border-color: var(--disabled-border);
+}
+			`,
+			root: {
+				shadow: 'none',
+				color: 'var(--color-neutral-950)',
 				borderColor: 'var(--color-neutral-950)',
 				hoverBorderColor: 'var(--color-primary-600)',
 				focusBorderColor: 'var(--color-primary-800)',
-				invalidBorderColor: 'var(--invalid-border)',
-				disabledBackground: 'var(--color-neutral-50)',
-				checkedDisabledBorderColor: 'var(--disabled-border)',
-				checkedBackground: 'var(--color-neutral-50)',
-				checkedBorderColor: 'var(--color-primary-700)',
-				checkedHoverBorderColor: 'var(--color-primary-600)',
-				checkedFocusBorderColor: 'var(--color-primary-800)',
-				checkedHoverBackground: 'var(--color-neutral-50)'
+				placeholderColor: 'var(--color-neutral-500)',
+				disabledBackground: 'var(--disabled-bg)',
+				disabledColor: 'var(--disabled-text)',
+				invalidBorderColor: 'var(--invalid-text)',
+				invalidPlaceholderColor: 'var(--color-neutral-500)'
+			},
+			colorScheme: {
+				light: {
+					root: {
+						background: 'var(--color-white)'
+					}
+				},
+				dark: {
+					root: {
+						background: 'var(--color-neutral-50)'
+					}
+				}
+			}
+		},
+		inputnumber: {
+			css: `
+.p-inputnumber-stacked .p-inputnumber-button-group { 
+	inset-block-start: 2px;
+	inset-inline-end: 2px;
+	height: calc(100% - 4px); 
+}
+`
+		},
+		message: {
+			css: `
+:root,
+:host {
+	--p-message-error-simple-color: var(--invalid-text);
+}
+`,
+			icon: {
+				sm: {
+					size: '20px'
+				}
 			}
 		}
 	},
 	semantic: {
 		primary: {
+			0: 'var(--color-neutral-0)',
 			50: 'var(--color-primary-50)',
 			100: 'var(--color-primary-100)',
 			200: 'var(--color-primary-200)',
@@ -533,6 +709,7 @@ a:not(.p-button):active {
 		colorScheme: {
 			light: {
 				surface: {
+					0: 'var(--color-neutral-0)',
 					50: 'var(--color-neutral-50)',
 					100: 'var(--color-neutral-100)',
 					200: 'var(--color-neutral-200)',
@@ -548,6 +725,7 @@ a:not(.p-button):active {
 			},
 			dark: {
 				surface: {
+					0: 'var(--color-neutral-0)',
 					50: 'var(--color-neutral-50)',
 					100: 'var(--color-neutral-100)',
 					200: 'var(--color-neutral-200)',

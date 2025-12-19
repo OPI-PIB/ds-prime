@@ -1,0 +1,45 @@
+<h2>Select</h2>
+<h3>Basic</h3>
+<div class="laptop:grid-cols-3 grid gap-8">
+	<p-select
+		[options]="cities"
+		[(ngModel)]="basicSelected"
+		optionLabel="name"
+		[showClear]="true"
+		placeholder="Select a City"
+	/>
+	<p-select
+		[options]="cities"
+		[(ngModel)]="basicSelected"
+		optionLabel="name"
+		[showClear]="true"
+		placeholder="Disabled"
+		disabled
+	/>
+	<p-select
+		[options]="cities"
+		[(ngModel)]="basicSelected"
+		optionLabel="name"
+		[showClear]="true"
+		placeholder="Invalid"
+		[invalid]="true"
+	/>
+</div>
+<h3>With filter</h3>
+<p-select
+	[options]="cities"
+	[(ngModel)]="filterSelected"
+	optionLabel="name"
+	[filter]="true"
+	filterBy="name"
+	ariaFilterLabel="Select a City"
+	[showClear]="true"
+	placeholder="Select a City"
+>
+	<ng-template #selectedItem let-selectedOption>
+		{{ selectedOption.name }}
+	</ng-template>
+	<ng-template let-country #item>
+		{{ country.name }}
+	</ng-template>
+</p-select>

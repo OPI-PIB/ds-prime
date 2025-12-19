@@ -1,0 +1,40 @@
+<h2>Datepicker</h2>
+<div class="laptop:grid-cols-4 grid gap-8">
+	<div>
+		<label for="calendar" class="text-b3-regular mb-1 block">Calendar with time</label>
+		<p-datepicker
+			inputId="calendar"
+			showIcon
+			iconDisplay="input"
+			[showTime]="true"
+			hourFormat="24"
+			aria-describedby="help"
+		/>
+		<p class="text-b3-regular mt-1" id="help">Podpowiedź</p>
+	</div>
+	<div>
+		<label for="calendarInvalid" class="text-b3-regular mb-1 block">Calendar invalid</label>
+		<p-datepicker inputId="calendarInvalid" showIcon iconDisplay="input" [invalid]="true" />
+		<p-message severity="error" size="small" variant="simple">Komunikat błędu.</p-message>
+	</div>
+	<div>
+		<label for="calendarDisabled" class="text-b3-regular mb-1 block">Calendar disabled</label>
+		<p-datepicker inputId="calendarDisabled" showIcon iconDisplay="input" disabled />
+	</div>
+	<div>
+		<label for="timeonly" class="text-b3-regular mb-1 block">Time only</label>
+		<p-datepicker inputId="timeonly" showIcon iconDisplay="input" timeOnly>
+			<ng-template #inputicon let-clickCallBack="clickCallBack">
+				<i class="ds-icon-clock" (click)="clickCallBack($event)"></i>
+			</ng-template>
+		</p-datepicker>
+	</div>
+	<div>
+		<label for="month" class="text-b3-regular mb-1 block">Month</label>
+		<p-datepicker inputId="month" view="month" dateFormat="mm/yy" [readonlyInput]="true" />
+	</div>
+	<div>
+		<label for="year" class="text-b3-regular mb-1 block">Year</label>
+		<p-datepicker inputId="year" view="year" dateFormat="yy" />
+	</div>
+</div>
