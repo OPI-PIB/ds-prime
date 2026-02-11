@@ -3,7 +3,7 @@
 ## Setup
 
 ```
-import { DsPrime } from '@opi_pib/ds-prime';
+import { DsPrime } from '@opi/ds-prime';
 
 export const appConfig: ApplicationConfig = {
 	providers: [

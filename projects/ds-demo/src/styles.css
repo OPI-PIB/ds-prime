@@ -1,25 +1,27 @@
+@layer tw, ds;
+
 @import 'tailwindcss' layer(tw);
 @import '@opi/ds/tailwind';
 
 body {
-	@apply text-black  bg-white dark:text-white dark:bg-black;
+  @apply text-text-primary bg-white dark:bg-black dark:text-white;
 
-	font-family: var(--font-sans);
+  font-family: var(--font-sans);
 }
 
 h1 {
-	@apply text-h2-semibold my-4;
+  @apply text-h2-semibold my-4;
 }
 
 h2 {
-	@apply text-h3-semibold my-4;
+  @apply text-h3-semibold my-4;
 }
 
 h3 {
-	@apply text-b1-medium my-4;
+  @apply text-b1-medium my-4;
 }
 
 .p-button.active {
-	background-color: light-dark(var(--color-neutral-900), var(--color-neutral-100));
-	color: light-dark(var(--color-neutral-100), var(--color-neutral-900));
+  background-color: light-dark(var(--color-neutral-900), var(--color-neutral-100));
+  color: light-dark(var(--color-neutral-100), var(--color-neutral-900));
 }

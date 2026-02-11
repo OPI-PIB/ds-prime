@@ -14,30 +14,30 @@ import { routes } from './app.routes';
 registerLocaleData(pl);
 
 export const appConfig: ApplicationConfig = {
-	providers: [
-		provideBrowserGlobalErrorListeners(),
-		provideRouter(routes),
-		provideHttpClient(),
-		provideTranslateService({
-			loader: provideTranslateHttpLoader({
-				prefix: './i18n/',
-				suffix: '.json'
-			})
-		}),
-		providePrimeNG({
-			theme: {
-				preset: DsPrime,
-				options: {
-					prefix: 'p',
-					darkModeSelector: 'system',
-					cssLayer: {
-						name: 'primeng',
-						order: 'tw, primeng, ds'
-					}
-				}
-			},
-			ripple: false,
-			pt: {}
-		})
-	]
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideRouter(routes),
+    provideHttpClient(),
+    provideTranslateService({
+      loader: provideTranslateHttpLoader({
+        prefix: './i18n/',
+        suffix: '.json',
+      }),
+    }),
+    providePrimeNG({
+      theme: {
+        preset: DsPrime,
+        options: {
+          prefix: 'p',
+          darkModeSelector: 'system',
+          cssLayer: {
+            name: 'primeng',
+            order: 'tw, primeng, ds',
+          },
+        },
+      },
+      ripple: false,
+      pt: {},
+    }),
+  ],
 };

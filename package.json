@@ -31,7 +31,6 @@
 	},
 	"author": "Dawid Lubowiecki",
 	"license": "MIT",
-	"prettier": "@opi_pib/prettier-config-base",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/OPI-PIB/ds-prime.git"
@@ -42,10 +41,13 @@
 		"primeng": "^21.0.0"
 	},
 	"devDependencies": {
-		"@opi_pib/eslint-config-base": "^9.0.0",
-		"@opi_pib/prettier-config-base": "^1.0.0",
+		"@opi/eslint-config": "^9.0.0",
+		"@opi/eslint-config-typescript": "^5.0.0",
+		"@opi/prettier-config": "^3.0.0",
+		"eslint": "^9.0.0",
 		"husky": "^9.0.0",
 		"lint-staged": "^16.0.0",
+		"prettier": "^3.0.0",
 		"typescript": "^5.0.0"
 	}
 }
