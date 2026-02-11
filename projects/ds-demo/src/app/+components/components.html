@@ -1,14 +1,23 @@
 <h1>{{ 'label.components' | translate }}</h1>
 
-<nav class="flex flex-wrap gap-2">
-	<a routerLink="button" routerLinkActive="active" pButton severity="secondary"> Button </a>
-	<a routerLink="checkbox" routerLinkActive="active" pButton severity="secondary"> Checkbox </a>
-	<!-- <a routerLink="datepicker" routerLinkActive="active" pButton severity="secondary"> Datepicker </a> -->
-	<a routerLink="radio" routerLinkActive="active" pButton severity="secondary"> Radio </a>
-	<!-- <a routerLink="textarea" routerLinkActive="active" pButton severity="secondary"> Textarea </a> -->
-	<!-- <a routerLink="text-field" routerLinkActive="active" pButton severity="secondary"> Text field </a> -->
-	<a routerLink="toggle" routerLinkActive="active" pButton severity="secondary"> Toggle </a>
-</nav>
+<div class="grid grid-cols-4 gap-8">
+	<nav class="flex flex-col gap-2">
+		<p>Form</p>
+		<a routerLink="checkbox" routerLinkActive="active" pButton severity="secondary"> Checkbox </a>
+		<a routerLink="radio" routerLinkActive="active" pButton severity="secondary"> Radio </a>
+		<a routerLink="toggle" routerLinkActive="active" pButton severity="secondary"> Toggle </a>
+		<p>Button</p>
+		<a routerLink="button" routerLinkActive="active" pButton severity="secondary"> Button </a>
+		<a routerLink="fab" routerLinkActive="active" pButton severity="secondary"> Floating Action Button </a>
+		<p>Panel</p>
+		<!-- <a routerLink="datepicker" routerLinkActive="active" pButton severity="secondary"> Datepicker </a> -->
+		<!-- <a routerLink="textarea" routerLinkActive="active" pButton severity="secondary"> Textarea </a> -->
+		<!-- <a routerLink="text-field" routerLinkActive="active" pButton severity="secondary"> Text field </a> -->
+	</nav>
+	<div class="col-span-3">
+		<router-outlet />
+	</div>
+</div>
 
 <!-- <app-accordion />
 <app-avatar />
@@ -34,4 +43,3 @@
 <app-divider />
 <app-select />
 <app-autocomplete /> -->
-<router-outlet />

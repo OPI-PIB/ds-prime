@@ -1,4 +1,19 @@
-import { cssTw } from '@opi_pib/stylelint-config-base';
-
 /** @type {import('stylelint').Config} */
-export default cssTw;
+export default {
+	rules: {},
+	overrides: [
+		{
+			files: ['*.css'],
+			extends: ['@opi/stylelint-config'],
+			rules: {
+				'import-notation': 'string',
+				'at-rule-no-unknown': [
+					true,
+					{
+						ignoreAtRules: ['reference', 'apply']
+					}
+				]
+			}
+		}
+	]
+};

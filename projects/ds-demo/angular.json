@@ -10,7 +10,10 @@
 			"projectType": "application",
 			"schematics": {
 				"@schematics/angular:component": {
-					"style": "css"
+					"style": "css",
+					"skipTests": true,
+					"changeDetection": "OnPush",
+					"inlineStyle": true
 				}
 			},
 			"root": "",

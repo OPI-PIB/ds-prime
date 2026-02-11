@@ -1,25 +1,17 @@
-import { js, ts } from '@opi_pib/eslint-config-base';
-
-const ignores = ['.angular/**', 'dist/**'];
+import opi from '@opi/eslint-config';
+import opiTypescript from '@opi/eslint-config-typescript';
+import assertions from '@opi_pib/eslint-plugin-assertions';
+import prettier from 'eslint-config-prettier';
 
 /** @type {import("eslint").Linter.Config[]} */
 export default [
+	opi,
+	{ files: ['**/*.{js,jsx,cjs,mjs}'] },
 	{
-		...js,
-		ignores
-	},
-	{
-		...ts,
-		languageOptions: {
-			...ts.languageOptions,
-			parserOptions: {
-				...ts.languageOptions.parserOptions,
-				project: './tsconfig.eslint.json'
-			}
-		},
-		ignores,
+		files: ['**/*.{ts,tsx,cts,mts}'],
+		...opiTypescript,
 		rules: {
-			...ts.rules,
+			...opiTypescript.rules,
 			'@opi_pib/assertions/assertions-code': ['error', '^[a-z0-9]{8}$'],
 			'@opi_pib/assertions/assertions-condition': ['error'],
 			'import/order': [
@@ -33,14 +25,12 @@ export default [
 						{
 							pattern: '@{core,translations}/**',
 							group: 'internal'
-						},
-						{
-							pattern: '@environment',
-							group: 'internal'
 						}
 					]
 				}
 			]
 		}
-	}
+	},
+	prettier,
+	{ ignores: ['.angular/**', 'dist/**'] }
 ];

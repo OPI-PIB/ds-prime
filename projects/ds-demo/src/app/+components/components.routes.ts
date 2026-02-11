@@ -7,6 +7,10 @@ export const routesComponents: Routes = [
 		loadComponent: () => import('./+button/button')
 	},
 	{
+		path: 'fab',
+		loadComponent: () => import('./+fab/fab')
+	},
+	{
 		path: 'checkbox',
 		loadComponent: () => import('./+checkbox/checkbox')
 	},
