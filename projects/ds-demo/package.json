@@ -11,7 +11,8 @@
     "test:e2e": "playwright test",
     "test:e2e:update": "playwright test --update-snapshots",
     "test:e2e:debug": "playwright test --ui",
-    "translate:build": "translate build --source=\"./src/app/**/*+(.ts|.html)\" --i18n=./public/i18n --langs=en --langs=pl"
+    "translate:build": "translate build --source=\"./src/app/**/*+(.ts|.html)\" --i18n=./public/i18n --langs=en --langs=pl",
+    "aaa": "stylelint **/*.css"
   },
   "engines": {
     "node": ">=24.0.0",
