@@ -4,17 +4,17 @@ import { Component, input } from '@angular/core';
 import { TailwindScale } from '../generator';
 
 @Component({
-	selector: 'app-color',
-	imports: [NgClass],
-	templateUrl: './color.html',
-	styleUrl: './color.scss'
+  selector: 'app-color',
+  imports: [NgClass],
+  templateUrl: './color.html',
+  styleUrl: './color.css',
 })
 export class Color {
-	scale = input<TailwindScale>();
+  scale = input<TailwindScale>();
 
-	selected = input<boolean>();
+  selected = input<boolean>();
 
-	className = input.required<string>();
+  className = input.required<string>();
 
-	color = input.required<string>();
+  color = input.required<string>();
 }

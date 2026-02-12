@@ -1,0 +1,16 @@
+a,
+button {
+  --link-text-decoration: none;
+}
+
+button {
+  text-decoration-line: var(--link-text-decoration);
+  text-decoration-skip-ink: auto;
+  text-decoration-style: solid;
+  text-underline-offset: 25%;
+  text-underline-position: from-font;
+}
+
+.active {
+  --link-text-decoration: underline;
+}

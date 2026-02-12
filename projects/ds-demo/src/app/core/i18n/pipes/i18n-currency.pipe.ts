@@ -7,14 +7,14 @@ import { TranslationLanguageEnum } from '@translations/translation-languages';
 import { I18nLocaleId } from '../i18n-localeId';
 
 @Pipe({
-	name: 'i18nCurrency',
-	pure: false
+  name: 'i18nCurrency',
+  pure: false,
 })
 export class I18nCurrencyPipe
-	extends I18nCurrencyPipeBase<TranslationKey, TranslationLanguageEnum>
-	implements PipeTransform
+  extends I18nCurrencyPipeBase<TranslationKey, TranslationLanguageEnum>
+  implements PipeTransform
 {
-	constructor(@Inject(LOCALE_ID) protected override localeId: I18nLocaleId) {
-		super(localeId);
-	}
+  constructor(@Inject(LOCALE_ID) protected override localeId: I18nLocaleId) {
+    super(localeId);
+  }
 }

@@ -13,73 +13,73 @@ import { en, pl } from '../../locale';
 import { TranslationLanguage } from './translation-language';
 
 @Injectable({
-	providedIn: 'root'
+  providedIn: 'root',
 })
 export class I18nService extends I18nServiceBase<TranslationKey, TranslationLanguageEnum, TranslationLanguage> {
-	#PrimeNG = inject(PrimeNG);
-	#DOCUMENT = inject(DOCUMENT);
+  #PrimeNG = inject(PrimeNG);
+  #DOCUMENT = inject(DOCUMENT);
 
-	#langChange$!: BehaviorSubject<TranslationLanguage>;
+  #langChange$!: BehaviorSubject<TranslationLanguage>;
 
-	#langChange!: WritableSignal<TranslationLanguage>;
+  #langChange!: WritableSignal<TranslationLanguage>;
 
-	constructor(protected override translateService: TranslateService) {
-		super(translateService);
-	}
+  constructor(protected override translateService: TranslateService) {
+    super(translateService);
+  }
 
-	forRoot(locales: any[]): void {
-		this.registerLocales(locales);
-		this.translateService.addLangs(['en', 'pl']);
+  forRoot(locales: any[]): void {
+    this.registerLocales(locales);
+    this.translateService.addLangs(['en', 'pl']);
 
-		const initialLanguage: TranslationLanguage = this.#getInitialLanguage();
+    const initialLanguage: TranslationLanguage = this.#getInitialLanguage();
 
-		this.translateService.setFallbackLang(initialLanguage.toDto());
-		this.translateService.use(initialLanguage.toDto());
-		this.#langChange$ = new BehaviorSubject(initialLanguage);
-		this.#langChange = signal<TranslationLanguage>(initialLanguage);
+    this.translateService.setFallbackLang(initialLanguage.toDto());
+    this.translateService.use(initialLanguage.toDto());
+    this.#langChange$ = new BehaviorSubject(initialLanguage);
+    this.#langChange = signal<TranslationLanguage>(initialLanguage);
 
-		this.translateService.onLangChange
-			.pipe(
-				map(({ lang }) => {
-					always(isTranslationLanguageEnum(lang), 'u9um8kqu');
+    this.translateService.onLangChange
+      .pipe(
+        map(({ lang }) => {
+          always(isTranslationLanguageEnum(lang), 'u9um8kqu');
 
-					return TranslationLanguage.create({ lang });
-				}),
-				tap((lang) => {
-					this.#DOCUMENT.documentElement.lang = lang.toDto();
-					this.#langChange.set(lang);
-					this.#PrimeNG.setTranslation(lang.toDto() === 'pl' ? pl : en);
-				})
-			)
-			.subscribe(this.#langChange$);
-	}
+          return TranslationLanguage.create({ lang });
+        }),
+        tap((lang) => {
+          this.#DOCUMENT.documentElement.lang = lang.toDto();
+          this.#langChange.set(lang);
+          this.#PrimeNG.setTranslation(lang.toDto() === 'pl' ? pl : en);
+        }),
+      )
+      .subscribe(this.#langChange$);
+  }
 
-	#getInitialLanguage(): TranslationLanguage {
-		const browserLanguage = this.translateService.getBrowserLang();
-		if (isTranslationLanguageEnum(browserLanguage)) {
-			return TranslationLanguage.create({ lang: browserLanguage });
-		}
+  #getInitialLanguage(): TranslationLanguage {
+    const browserLanguage = this.translateService.getBrowserLang();
+    if (isTranslationLanguageEnum(browserLanguage)) {
+      return TranslationLanguage.create({ lang: browserLanguage });
+    }
 
-		return this.getAvailableLanguages()[0];
-	}
+    return this.getAvailableLanguages()[0];
+  }
 
-	get langChange() {
-		return this.#langChange.asReadonly();
-	}
+  get langChange() {
+    return this.#langChange.asReadonly();
+  }
 
-	getCurrentLanguage(): TranslationLanguage {
-		return this.#langChange$.getValue();
-	}
+  getCurrentLanguage(): TranslationLanguage {
+    return this.#langChange$.getValue();
+  }
 
-	getCurrentLanguage$(): Observable<TranslationLanguage> {
-		return this.#langChange$.pipe(distinctUntilChanged((a, b) => a.equals(b)));
-	}
+  getCurrentLanguage$(): Observable<TranslationLanguage> {
+    return this.#langChange$.pipe(distinctUntilChanged((a, b) => a.equals(b)));
+  }
 
-	getAvailableLanguages(): TranslationLanguage[] {
-		return this.translateService.getLangs().map((lang) => {
-			always(isTranslationLanguageEnum(lang), '5bpriqmx');
+  getAvailableLanguages(): TranslationLanguage[] {
+    return this.translateService.getLangs().map((lang) => {
+      always(isTranslationLanguageEnum(lang), '5bpriqmx');
 
-			return TranslationLanguage.create({ lang });
-		});
-	}
+      return TranslationLanguage.create({ lang });
+    });
+  }
 }

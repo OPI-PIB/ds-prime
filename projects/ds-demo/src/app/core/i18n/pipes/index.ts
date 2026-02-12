@@ -6,11 +6,11 @@ import { I18nPluralPipe } from './i18n-translate-plural.pipe';
 import { I18nTranslatePipe } from './i18n-translate.pipe';
 
 export const i18nPipes = [
-	I18nCurrencyPipe,
-	I18nDatePipe,
-	I18nDecimalPipeBase,
-	I18nPercentPipeBase,
-	I18nPluralPipe,
-	I18nSelectPipeBase,
-	I18nTranslatePipe
+  I18nCurrencyPipe,
+  I18nDatePipe,
+  I18nDecimalPipeBase,
+  I18nPercentPipeBase,
+  I18nPluralPipe,
+  I18nSelectPipeBase,
+  I18nTranslatePipe,
 ];

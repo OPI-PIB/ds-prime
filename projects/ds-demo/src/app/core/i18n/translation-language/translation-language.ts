@@ -9,32 +9,32 @@ import { translationLanguageMap } from './translation-language-map';
 import { TranslationLanguageProps } from './translation-language-props';
 
 export class TranslationLanguage
-	extends ValueObject<TranslationLanguageProps>
-	implements TranslationLanguageBase<TranslationLanguageEnum, TranslationKey>
+  extends ValueObject<TranslationLanguageProps>
+  implements TranslationLanguageBase<TranslationLanguageEnum, TranslationKey>
 {
-	constructor(protected override readonly props: TranslationLanguageProps) {
-		super(props);
-	}
+  constructor(protected override readonly props: TranslationLanguageProps) {
+    super(props);
+  }
 
-	static create(props: TranslationLanguageProps): TranslationLanguage {
-		always(isTranslationLanguageProps(props), 'z4gzlad6');
+  static create(props: TranslationLanguageProps): TranslationLanguage {
+    always(isTranslationLanguageProps(props), 'z4gzlad6');
 
-		return new TranslationLanguage(props);
-	}
+    return new TranslationLanguage(props);
+  }
 
-	static fromDto(lang: TranslationLanguageEnum): TranslationLanguage {
-		return this.create({ lang });
-	}
+  static fromDto(lang: TranslationLanguageEnum): TranslationLanguage {
+    return this.create({ lang });
+  }
 
-	toDto(): TranslationLanguageEnum {
-		return this.props.lang;
-	}
+  toDto(): TranslationLanguageEnum {
+    return this.props.lang;
+  }
 
-	getTranslationKey(): TranslationKey {
-		return translationLanguageMap[this.toDto()].translationKey;
-	}
+  getTranslationKey(): TranslationKey {
+    return translationLanguageMap[this.toDto()].translationKey;
+  }
 
-	get icon() {
-		return translationLanguageMap[this.toDto()].icon;
-	}
+  get icon() {
+    return translationLanguageMap[this.toDto()].icon;
+  }
 }

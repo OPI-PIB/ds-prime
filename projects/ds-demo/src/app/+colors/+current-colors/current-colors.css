@@ -1,5 +1,5 @@
 @reference '@opi/ds/tailwind';
 
 .list {
-  @apply text-b3-regular flex flex-col gap-2;
+  @apply text-b3-regular flex flex-col gap-4;
 }

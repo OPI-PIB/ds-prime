@@ -4,7 +4,7 @@ import { I18nTranslatePipeBase } from '@opi_pib/ngx-i18n';
 import { TranslationKey } from '@translations/translation-key';
 
 @Pipe({
-	name: 'translate',
-	pure: false
+  name: 'translate',
+  pure: false,
 })
 export class I18nTranslatePipe extends I18nTranslatePipeBase<TranslationKey> implements PipeTransform {}

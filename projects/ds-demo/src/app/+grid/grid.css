@@ -1,9 +1,9 @@
 @reference '@opi/ds/tailwind';
 
 .grid-24 {
-	@apply gap-4 tablet:gap-5 laptop:gap-6 grid mb-4 tablet:mb-5 laptop:mb-6;
+  @apply tablet:gap-5 laptop:gap-6 tablet:mb-5 laptop:mb-6 mb-4 grid gap-4;
 }
 
 .grid-32 {
-	@apply gap-4 tablet:gap-5 laptop:gap-8 grid laptop:mx-2 mb-4 tablet:mb-5 laptop:mb-8;
+  @apply tablet:gap-5 laptop:gap-8 laptop:mx-2 tablet:mb-5 laptop:mb-8 mb-4 grid gap-4;
 }

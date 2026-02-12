@@ -10,22 +10,17 @@ body {
 }
 
 h1 {
-  @apply text-h2-semibold my-4;
+  @apply text-h2-semibold;
 }
 
 h2 {
-  @apply text-h3-semibold my-4;
+  @apply text-h3-semibold;
 }
 
 h3 {
-  @apply text-b1-medium my-4;
+  @apply text-b1-medium;
 }
 
 h4 {
-  @apply text-b2-medium my-4;
-}
-
-.p-button.active {
-  background-color: light-dark(var(--color-neutral-900), var(--color-neutral-100));
-  color: light-dark(var(--color-neutral-100), var(--color-neutral-900));
+  @apply text-b2-medium;
 }

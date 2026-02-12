@@ -1,7 +1,9 @@
-<p class="text-b3-regular mb-2">.{{ iconClass() }}</p>
-<p class="flex gap-2">
-	<i [class]="iconClass()" [aria-label]="icon()"></i>
-	<i [class]="iconClass()" [aria-label]="icon()"></i>
-	<i [class]="iconClass()" [aria-label]="icon()"></i>
-	<i [class]="iconClass()" [aria-label]="icon()"></i>
-</p>
+<div class="flex items-center gap-4 outline-1 outline-neutral-100">
+  <div class="flex gap-2 border-r border-r-neutral-100 p-2">
+    <i [class]="iconClass()" [aria-label]="icon()"></i>
+    <i [class]="iconClass()" [aria-label]="icon()"></i>
+    <i [class]="iconClass()" [aria-label]="icon()"></i>
+    <i [class]="iconClass()" [aria-label]="icon()"></i>
+  </div>
+  <div>.{{ iconClass() }}</div>
+</div>

@@ -1,20 +1,19 @@
 <div class="flex gap-2 p-4">
-	<input type="text" pInputText [(ngModel)]="color" />
-	<button pButton (click)="generateColors()">Generate</button>
+  <input type="text" pInputText [(ngModel)]="color" />
+  <button pButton (click)="generateColors()">Generate</button>
 </div>
 @if (error(); as error) {
-	<div class="text-error-500">{{ error }}</div>
+  <div class="text-error-500">{{ error }}</div>
 }
 @if (palette(); as palette) {
-	<h3 class="text-b3-medium my-8">New palette</h3>
-	<div class="text-b3-regular">
-		@for (shade of shades; track shade) {
-			<app-color
-				[scale]="shade"
-				[className]="`bg-test-${shade}`"
-				[selected]="shade === palette.anchor"
-				[color]="palette.palette[shade]"
-			/>
-		}
-	</div>
+  <h3 class="text-b3-medium my-8">New palette</h3>
+  <div class="text-b3-regular">
+    @for (shade of shades; track shade) {
+      <app-color
+        [scale]="shade"
+        [className]="`bg-test-${shade}`"
+        [selected]="shade === palette.anchor"
+        [color]="palette.palette[shade]" />
+    }
+  </div>
 }
