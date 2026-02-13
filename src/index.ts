@@ -342,6 +342,10 @@ a:not(.p-button):active {
 	border-width: var(--border-width);
 }
 
+.p-checkbox.p-disabled .p-checkbox-box {
+  --p-checkbox-disabled-background: var(--color-fill-accent-disabled);
+}
+
 .p-checkbox.p-invalid {
 	--p-checkbox-hover-border-color: var(--color-text-danger-hover);
 	--p-checkbox-checked-background: var(--color-text-danger-default);
@@ -370,35 +374,35 @@ a:not(.p-button):active {
             focusBorderColor: 'var(--color-fill-accent-pressed)',
             checkedFocusBorderColor: 'var(--color-fill-accent-pressed)',
             disabledBackground: 'var(--color-white)',
-            checkedDisabledBorderColor: 'var(--color-stroke-disabled)',
+            checkedDisabledBorderColor: 'var(--color-text-accent-disabled)',
           },
           icon: {
             color: 'var(--color-stroke-default)',
-            disabledColor: 'var(--color-fill-accent-disabled)',
+            disabledColor: 'var(--color-white)',
             checkedColor: 'var(--color-white)',
             checkedHoverColor: 'var(--color-white)',
           },
         },
         dark: {
           root: {
-            background: 'var(--color-neutral-0)',
-            checkedBackground: 'var(--color-fill-primary-default)',
-            checkedHoverBackground: 'var(--color-fill-primary-hover)',
+            background: 'var(--color-white)',
+            checkedBackground: 'var(--color-fill-accent-default)',
+            checkedHoverBackground: 'var(--color-fill-accent-hover)',
             borderColor: 'var(--color-stroke-default)',
-            hoverBorderColor: 'var(--color-fill-primary-hover)',
-            checkedBorderColor: 'var(--color-fill-primary-default)',
-            checkedHoverBorderColor: 'var(--color-fill-primary-hover)',
+            hoverBorderColor: 'var(--color-stroke-hover)',
+            checkedBorderColor: 'var(--color-fill-accent-default)',
+            checkedHoverBorderColor: 'var(--color-fill-accent-hover)',
             invalidBorderColor: 'var(--color-text-danger-default)',
-            focusBorderColor: 'var(--color-fill-primary-pressed)',
-            checkedFocusBorderColor: 'var(--color-fill-primary-pressed)',
-            disabledBackground: 'var(--color-fill-primary-disabled)',
-            checkedDisabledBorderColor: 'var(--color-fill-primary-disabled)',
+            focusBorderColor: 'var(--color-fill-accent-pressed)',
+            checkedFocusBorderColor: 'var(--color-fill-accent-pressed)',
+            disabledBackground: 'var(--color-white)',
+            checkedDisabledBorderColor: 'var(--color-text-accent-disabled)',
           },
           icon: {
-            color: 'var(--color-text-primary)',
-            disabledColor: 'var(--color-text-secondary)',
-            checkedColor: 'var(--color-text-inverse)',
-            checkedHoverColor: 'var(--color-text-inverse)',
+            color: 'var(--color-stroke-default)',
+            disabledColor: 'var(--color-white)',
+            checkedColor: 'var(--color-white)',
+            checkedHoverColor: 'var(--color-white)',
           },
         },
       },
@@ -440,28 +444,29 @@ a:not(.p-button):active {
 	--p-radiobutton-checked-focus-border-color: var(--color-text-danger-default);
 	--p-radiobutton-icon-checked-color: var(--color-text-danger-default);
 	--p-radiobutton-icon-checked-hover-color: var(--color-text-danger-hover);
-	--p-radiobutton-focus-ring-color: var(--color-danger-950);
+	--p-radiobutton-focus-ring-color: var(--color-stroke-focus-danger);
+  --p-radiobutton-focus-border-color: var(--color-text-danger-hover);
 }
 			`,
       icon: {
-        checkedColor: 'var(--color-text-primary-default)',
-        checkedHoverColor: 'var(--color-text-primary-hover)',
-        disabledColor: 'var(--color-text-secondary)',
+        checkedColor: 'var(--color-fill-accent-default)',
+        checkedHoverColor: 'var(--color-fill-accent-hover)',
+        disabledColor: 'var(--color-fill-accent-disabled)',
       },
       root: {
         shadow: 'none',
-        background: 'var(--color-neutral-0)',
-        borderColor: 'var(--color-neutral-950)',
-        hoverBorderColor: 'var(--color-fill-primary-hover)',
-        focusBorderColor: 'var(--color-fill-primary-pressed)',
-        checkedBackground: 'var(--color-neutral-0)',
-        checkedHoverBackground: 'var(--color-neutral-0)',
-        checkedBorderColor: 'var(--color-fill-primary-default)',
-        checkedHoverBorderColor: 'var(--color-fill-primary-hover)',
-        checkedFocusBorderColor: 'var(--color-fill-primary-pressed)',
+        background: 'var(--color-white)',
+        borderColor: 'var(--color-stroke-default)',
+        hoverBorderColor: 'var(--color-fill-accent-hover)',
+        focusBorderColor: 'var(--color-fill-accent-default)',
+        checkedBackground: 'var(--color-white)',
+        checkedHoverBackground: 'var(--color-white)',
+        checkedBorderColor: 'var(--color-fill-accent-default)',
+        checkedHoverBorderColor: 'var(--color-fill-accent-hover)',
+        checkedFocusBorderColor: 'var(--color-fill-accent-default)',
         invalidBorderColor: 'var(--color-text-danger-default)',
-        disabledBackground: 'var(--color-fill-primary-disabled)',
-        checkedDisabledBorderColor: 'var(--color-fill-primary-disabled)',
+        disabledBackground: 'var(--color-white)',
+        checkedDisabledBorderColor: 'var(--color-fill-accent-disabled)',
       },
     },
     toggleswitch: {

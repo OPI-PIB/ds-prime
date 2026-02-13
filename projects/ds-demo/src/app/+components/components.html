@@ -1,4 +1,4 @@
-<div class="grid grid-cols-4 gap-8">
+<app-sidebar>
   <nav class="flex flex-col gap-2">
     <div>Form</div>
     <div class="ml-4 flex flex-col gap-2">
@@ -16,10 +16,9 @@
     <!-- <a routerLink="textarea" routerLinkActive="active" pButton severity="secondary"> Textarea </a> -->
     <!-- <a routerLink="text-field" routerLinkActive="active" pButton severity="secondary"> Text field </a> -->
   </nav>
-  <div class="col-span-3">
-    <router-outlet />
-  </div>
-</div>
+
+  <router-outlet />
+</app-sidebar>
 
 <!-- <app-accordion />
 <app-avatar />

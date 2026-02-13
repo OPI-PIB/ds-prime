@@ -1,55 +1,28 @@
-<h2>Radio</h2>
-<h3>Normal</h3>
-<div class="flex flex-col gap-4">
-	<div class="flex">
-		<p-radiobutton name="pizza" value="Tomato" [(ngModel)]="ingredient" inputId="ingredient4" />
-		<label for="ingredient4" class="ml-2">Normal</label>
-	</div>
-	<div class="flex">
-		<p-radiobutton name="pizza" value="Tomato" [(ngModel)]="ingredient" inputId="ingredient4d" disabled />
-		<label for="ingredient4d" class="ml-2">Normal</label>
-	</div>
-</div>
-
-<h3>With hint</h3>
-<div class="flex flex-col gap-4">
-	<div class="flex">
-		<p-radiobutton name="pizza" value="Pepper" [(ngModel)]="ingredient" inputId="ingredient1" />
-		<div class="label ml-2">
-			<label for="ingredient1">Normal</label>
-			<div class="text-b3-regular mt-2">Hint text <a href="#">link text</a></div>
-		</div>
-	</div>
-	<div class="flex">
-		<p-radiobutton name="pizza" value="Pepper" [(ngModel)]="ingredient" inputId="ingredient1d" disabled />
-		<div class="label ml-2">
-			<label for="ingredient1d">Normal</label>
-			<div class="text-b3-regular mt-2">Hint text <a href="#">link text</a></div>
-		</div>
-	</div>
-</div>
-
-<h3>With hint</h3>
-<div class="flex flex-col gap-4">
-	<div class="flex">
-		<p-radiobutton name="pizza" value="Invalid" [(ngModel)]="ingredient" inputId="ingredient3" [invalid]="true" />
-		<div class="label ml-2">
-			<label for="ingredient3">Invalid</label>
-			<div class="text-b3-regular mt-2">Hint text <a href="#">link text</a></div>
-		</div>
-	</div>
-	<div class="flex">
-		<p-radiobutton
-			name="pizza"
-			value="Invalid"
-			[(ngModel)]="ingredient"
-			inputId="ingredient3d"
-			[invalid]="true"
-			disabled
-		/>
-		<div class="label ml-2">
-			<label for="ingredient3d">Invalid</label>
-			<div class="text-b3-regular mt-2">Hint text <a href="#">link text</a></div>
-		</div>
-	</div>
+<div class="grid grid-cols-1 gap-8">
+  <div>
+    <div class="text-b2-medium mb-2">Normal</div>
+    <div class="flex flex-col gap-4">
+      <div class="flex">
+        <p-radiobutton name="pizza" [(ngModel)]="pizza" inputId="ingredient1" />
+        <label for="ingredient1" class="ml-2">Normal</label>
+      </div>
+      <div class="flex">
+        <p-radiobutton name="pizza" [(ngModel)]="pizza" inputId="ingredient1d" disabled />
+        <label for="ingredient1d" class="ml-2">Normal</label>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="text-b2-medium mb-2">Invalid</div>
+    <div class="flex flex-col gap-4">
+      <div class="flex">
+        <p-radiobutton name="cake" [(ngModel)]="cake" inputId="ingredient2" [invalid]="true" />
+        <label for="ingredient2" class="ml-2">Invalid</label>
+      </div>
+      <div class="flex">
+        <p-radiobutton name="cake" [(ngModel)]="cake" inputId="ingredient2d" [invalid]="true" disabled />
+        <label for="ingredient2d" class="ml-2">Invalid</label>
+      </div>
+    </div>
+  </div>
 </div>

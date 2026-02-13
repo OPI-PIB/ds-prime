@@ -11,4 +11,6 @@ export default class Checkbox {
   checked = true;
 
   checkedIndeterminate = null;
+
+  checkedInvalid = true;
 }
