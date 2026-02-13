@@ -259,10 +259,10 @@ a:not(.p-button):active {
               activeColor: 'var(--color-text-danger-pressed)',
               background: 'var(--color-fill-danger-default)',
               hoverBackground: 'var(--color-fill-danger-hover)',
-              activeBackground: 'var(--color-text-danger-pressed)',
+              activeBackground: 'var(--color-fill-danger-pressed)',
               borderColor: 'var(--color-fill-danger-default)',
               hoverBorderColor: 'var(--color-fill-danger-hover)',
-              activeBorderColor: 'var(--color-text-danger-pressed)',
+              activeBorderColor: 'var(--color-fill-danger-pressed)',
               focusRing: {
                 color: 'var(--color-stroke-focus-danger)',
               },
@@ -282,7 +282,7 @@ a:not(.p-button):active {
               borderColor: 'currentcolor',
             },
             danger: {
-              color: 'var(--color-text-accent-default)',
+              color: 'var(--color-text-danger-default)',
               hoverBackground: 'var(--color-white)',
               activeBackground: 'var(--color-white)',
               borderColor: 'currentcolor',
@@ -306,8 +306,8 @@ a:not(.p-button):active {
             },
           },
           link: {
-            color: 'var(--color-fill-primary-default)',
-            hoverColor: 'var(--color-text-primary-hover)',
+            color: 'var(--color-text-accent-default)',
+            hoverColor: 'var(--color-text-accent-hover)',
             activeColor: 'var(--color-text-accent-pressed)',
           },
         },
@@ -340,14 +340,14 @@ a:not(.p-button):active {
 .p-checkbox-box { 
 	margin-top: var(--checkbox-mt);
 	border-width: var(--border-width);
-} 
+}
 
 .p-checkbox.p-invalid {
 	--p-checkbox-hover-border-color: var(--color-text-danger-hover);
 	--p-checkbox-checked-background: var(--color-text-danger-default);
 	--p-checkbox-checked-hover-background: var(--color-text-danger-hover);
 	--p-checkbox-checked-hover-border-color: var(--color-text-danger-hover);
-	--p-checkbox-focus-ring-color: var(--color-danger-950);
+	--p-checkbox-focus-ring-color: var(--color-stroke-focus-danger);
 	--p-checkbox-focus-border-color: var(--color-text-danger-default);
 	--p-checkbox-checked-focus-border-color: var(--color-text-danger-default);
 }
@@ -359,24 +359,24 @@ a:not(.p-button):active {
       colorScheme: {
         light: {
           root: {
-            background: 'var(--color-neutral-0)',
-            checkedBackground: 'var(--color-fill-primary-default)',
-            checkedHoverBackground: 'var(--color-fill-primary-hover)',
+            background: 'var(--color-white)',
+            checkedBackground: 'var(--color-fill-accent-default)',
+            checkedHoverBackground: 'var(--color-fill-accent-hover)',
             borderColor: 'var(--color-stroke-default)',
-            hoverBorderColor: 'var(--color-fill-primary-hover)',
-            checkedBorderColor: 'var(--color-fill-primary-default)',
-            checkedHoverBorderColor: 'var(--color-fill-primary-hover)',
+            hoverBorderColor: 'var(--color-stroke-hover)',
+            checkedBorderColor: 'var(--color-fill-accent-default)',
+            checkedHoverBorderColor: 'var(--color-fill-accent-hover)',
             invalidBorderColor: 'var(--color-text-danger-default)',
-            focusBorderColor: 'var(--color-fill-primary-pressed)',
-            checkedFocusBorderColor: 'var(--color-fill-primary-pressed)',
-            disabledBackground: 'var(--color-fill-primary-disabled)',
-            checkedDisabledBorderColor: 'var(--color-fill-primary-disabled)',
+            focusBorderColor: 'var(--color-fill-accent-pressed)',
+            checkedFocusBorderColor: 'var(--color-fill-accent-pressed)',
+            disabledBackground: 'var(--color-white)',
+            checkedDisabledBorderColor: 'var(--color-stroke-disabled)',
           },
           icon: {
-            color: 'var(--color-text-primary)',
-            disabledColor: 'var(--color-text-secondary)',
-            checkedColor: 'var(--color-text-inverse)',
-            checkedHoverColor: 'var(--color-text-inverse)',
+            color: 'var(--color-stroke-default)',
+            disabledColor: 'var(--color-fill-accent-disabled)',
+            checkedColor: 'var(--color-white)',
+            checkedHoverColor: 'var(--color-white)',
           },
         },
         dark: {
