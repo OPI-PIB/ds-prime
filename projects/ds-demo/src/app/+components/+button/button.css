@@ -1,0 +1,10 @@
+@reference '@opi/ds/tailwind';
+
+.hint a:not(:active) {
+  @apply text-text-secondary;
+}
+
+.hint.disabled a,
+.disabled a {
+  @apply text-disabled;
+}

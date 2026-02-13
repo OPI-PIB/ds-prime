@@ -1,22 +1,24 @@
-<h1>{{ 'label.components' | translate }}</h1>
-
 <div class="grid grid-cols-4 gap-8">
-	<nav class="flex flex-col gap-2">
-		<p>Form</p>
-		<a routerLink="checkbox" routerLinkActive="active" pButton severity="secondary"> Checkbox </a>
-		<a routerLink="radio" routerLinkActive="active" pButton severity="secondary"> Radio </a>
-		<a routerLink="toggle" routerLinkActive="active" pButton severity="secondary"> Toggle </a>
-		<p>Button</p>
-		<a routerLink="button" routerLinkActive="active" pButton severity="secondary"> Button </a>
-		<a routerLink="fab" routerLinkActive="active" pButton severity="secondary"> Floating Action Button </a>
-		<p>Panel</p>
-		<!-- <a routerLink="datepicker" routerLinkActive="active" pButton severity="secondary"> Datepicker </a> -->
-		<!-- <a routerLink="textarea" routerLinkActive="active" pButton severity="secondary"> Textarea </a> -->
-		<!-- <a routerLink="text-field" routerLinkActive="active" pButton severity="secondary"> Text field </a> -->
-	</nav>
-	<div class="col-span-3">
-		<router-outlet />
-	</div>
+  <nav class="flex flex-col gap-2">
+    <div>Form</div>
+    <div class="ml-4 flex flex-col gap-2">
+      <a routerLink="checkbox" routerLinkActive="active"> Checkbox </a>
+      <a routerLink="radio" routerLinkActive="active"> Radio </a>
+      <a routerLink="toggle" routerLinkActive="active"> Toggle </a>
+    </div>
+    <div>Button</div>
+    <div class="ml-4 flex flex-col gap-2">
+      <a routerLink="button" routerLinkActive="active"> Button </a>
+      <a routerLink="fab" routerLinkActive="active"> Floating Action Button </a>
+    </div>
+    <div>Panel</div>
+    <!-- <a routerLink="datepicker" routerLinkActive="active" pButton severity="secondary"> Datepicker </a> -->
+    <!-- <a routerLink="textarea" routerLinkActive="active" pButton severity="secondary"> Textarea </a> -->
+    <!-- <a routerLink="text-field" routerLinkActive="active" pButton severity="secondary"> Text field </a> -->
+  </nav>
+  <div class="col-span-3">
+    <router-outlet />
+  </div>
 </div>
 
 <!-- <app-accordion />

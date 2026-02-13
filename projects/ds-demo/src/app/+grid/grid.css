@@ -1,9 +1,33 @@
 @reference '@opi/ds/tailwind';
 
 .grid-24 {
-  @apply tablet:gap-5 laptop:gap-6 tablet:mb-5 laptop:mb-6 mb-4 grid gap-4;
+  @apply tablet:gap-5 laptop:gap-6 grid gap-4;
 }
 
 .grid-32 {
-  @apply tablet:gap-5 laptop:gap-8 laptop:mx-2 tablet:mb-5 laptop:mb-8 mb-4 grid gap-4;
+  @apply tablet:gap-5 laptop:gap-8 grid gap-4;
+}
+
+.col {
+  padding: 16px;
+}
+
+.orange .col {
+  background-color: #f8682820;
+}
+
+.green .col {
+  background-color: #92c40020;
+}
+
+.violet .col {
+  background-color: #934ff320;
+}
+
+.blue .col {
+  background-color: #00b5f120;
+}
+
+.yellow .col {
+  background-color: #ffc40020;
 }

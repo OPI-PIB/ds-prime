@@ -1,8 +1,9 @@
-import prettier from '@opi/prettier-config';
+import angular from '@opi/prettier-config/angular'; 
 
 /**
  * @type {import("prettier").Config}
  */
 export default {
-  ...prettier,
+  ...angular,
+  plugins: ['prettier-plugin-tailwindcss'],
 };

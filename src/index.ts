@@ -53,50 +53,16 @@ export const DsPrime = definePreset(Aura, {
 :root,
 :host {
 	--button-font-weight: var(--font-weight-regular);
-	--button-text-size: var(--text-b2--size);
-	--button-py: 11px;
-	--button-px: 11px;
-	--button-cta-text-size: var(--text-b1--size);
-	--button-cta-py: 12px;
-	--button-cta-px: 15px;
-	--button-icon-only-width: 48px;
-	--button-cta-icon-only-width: 56px;
-}
-
-@media (width > 45rem) {
-	:root,
-	:host {
-		--button-py: 9px;
-		--button-px: 10px;
-		--button-icon-only-width: 44px;
-	}
-}
-
-.p-button:not(.p-button-text):disabled { 
-	border-color: var(--color-stroke-disabled);
-}
-
-.p-button:not(.p-button-outlined, .p-button-text):disabled,
-.p-button.p-button-outlined.p-button-icon-only:disabled {
-	background-color: var(--color-fill-primary-disabled);
+	--button-text-size: 1rem;
+  --button-size: 48px; 
+	--button-p: 12px; 
+	--button-cta-text-size: 1.125rem;
+  --button-cta-size: 56px;
+	--button-cta-p: 16px;
 }
 
 .p-button.p-button-outlined {
-	--p-button-padding-y: 10px;
-	--p-button-lg-padding-y: 11px;
-
 	border-width: var(--border-width);
-}
-
-.p-button.p-button-outlined.p-button-icon-only {
-	background-color: var(--color-neutral-0);
-}
-
-.p-button.p-button-outlined:not(.p-button-icon-only) {
-	--p-button-outlined-primary-hover-background: transparent;
-	--p-button-outlined-primary-active-background: transparent;
-	--p-button-outlined-danger-hover-background: transparent;
-	--p-button-outlined-danger-active-background: transparent;
 }
 
 .p-button.p-button-outlined:not(:disabled):hover,
@@ -104,34 +70,16 @@ export const DsPrime = definePreset(Aura, {
 	border-width: var(--border-width);
 }
 
-@media (width > 45rem) {
-	.p-button.p-button-outlined {
-		--p-button-padding-y: 8px;
-	}
+.p-button:not(.p-button-text, .p-button-link) {
+  min-height: var(--button-size);
 }
 
-.p-button.p-button-outlined:not(:disabled):hover {
-	--p-button-outlined-primary-color: var(--color-text-primary-hover);
-	--p-button-outlined-danger-color: var(--color-text-danger-hover);
-}
-
-.p-button.p-button-outlined:not(:disabled):active {
-	--p-button-outlined-primary-color: var(--color-text-primary-pressed);
-	--p-button-outlined-danger-color: var(--color-text-danger-pressed);
-}
-
-.p-button.p-button-text:not(:disabled):hover {
-	--p-button-text-primary-color: var(--color-text-primary-hover);
-	--p-button-text-danger-color: var(--color-text-danger-hover);
-}
-
-.p-button.p-button-text:not(:disabled):active {
-	--p-button-text-primary-color: var(--color-text-primary-pressed);
-	--p-button-text-danger-color: var(--color-text-danger-pressed);
+.p-button-lg:not(.p-button-text, .p-button-link) {
+  min-height: var(--button-cta-size);
 }
 
 .p-button-text,
-.p-button-link {
+.p-button-link { 
 	--p-button-padding-x: 0;
 	--p-button-padding-y: 0;
 }
@@ -147,9 +95,48 @@ export const DsPrime = definePreset(Aura, {
 
 a:not(.p-button) {
 	color: var(--p-button-link-color);
-	outline-color: var(--color-focus-ring);
+	outline-color: var(--color-stroke-focus);
 	outline-offset: 4px;
 	outline-width: 2px;
+}
+
+@media (width > 45rem) {
+	:root,
+	:host {
+		--button-p: 10px; 
+    --button-size: 44px; 
+	  --button-cta-text-size: 1.25rem;
+	} 
+}
+
+.p-button.p-button-outlined:not(:disabled):hover {
+	--p-button-outlined-primary-color: var(--color-text-accent-hover);
+	--p-button-outlined-danger-color: var(--color-text-danger-hover);
+}
+
+.p-button.p-button-outlined:not(:disabled):active {
+	--p-button-outlined-primary-color: var(--color-text-accent-pressed);
+	--p-button-outlined-danger-color: var(--color-text-danger-pressed);
+}
+
+.p-button.p-button-text:not(:disabled):hover {
+	--p-button-text-primary-color: var(--color-text-accent-hover);
+	--p-button-text-danger-color: var(--color-text-danger-hover);
+}
+
+.p-button.p-button-text:not(:disabled):active {
+	--p-button-text-primary-color: var(--color-text-accent-pressed);
+	--p-button-text-danger-color: var(--color-text-danger-pressed);
+}
+
+.p-button:not(.p-button-text, .p-button-outlined):disabled {
+  color: var(--color-text-accent-inverse);
+  border-color: var(--color-text-accent-disabled);
+  background: var(--color-text-accent-disabled);
+}
+
+.p-button:is(.p-button-text, .p-button-outlined):disabled {
+  color: var(--color-text-accent-disabled);
 }
 
 a:not(.p-button):hover {
@@ -165,14 +152,14 @@ a:not(.p-button):active {
           fontWeight: 'var(--button-font-weight)',
         },
         borderRadius: 'var(--radius-default)',
-        paddingY: 'var(--button-py)',
-        paddingX: 'var(--button-px)',
-        iconOnlyWidth: 'var(--button-icon-only-width)',
+        paddingY: 'var(--button-p)',
+        paddingX: 'var(--button-p)',
+        iconOnlyWidth: 'var(--button-size)',
         lg: {
           fontSize: 'var(--button-cta-text-size)',
-          paddingY: 'var(--button-cta-py)',
-          paddingX: 'var(--button-cta-px)',
-          iconOnlyWidth: 'var(--button-cta-icon-only-width)',
+          paddingY: 'var(--button-cta-p)',
+          paddingX: 'var(--button-cta-p)',
+          iconOnlyWidth: 'var(--button-cta-size)',
         },
       },
       colorScheme: {
@@ -182,14 +169,14 @@ a:not(.p-button):active {
               color: 'var(--color-text-inverse)',
               hoverColor: 'var(--color-text-inverse)',
               activeColor: 'var(--color-text-inverse)',
-              background: 'var(--color-fill-primary-default)',
-              hoverBackground: 'var(--color-fill-primary-hover)',
-              activeBackground: 'var(--color-fill-primary-pressed)',
-              borderColor: 'var(--color-fill-primary-default)',
-              hoverBorderColor: 'var(--color-fill-primary-hover)',
-              activeBorderColor: 'var(--color-fill-primary-pressed)',
+              background: 'var(--color-text-accent-default)',
+              hoverBackground: 'var(--color-text-accent-hover)',
+              activeBackground: 'var(--color-text-accent-pressed)',
+              borderColor: 'var(--color-text-accent-default)',
+              hoverBorderColor: 'var(--color-text-accent-hover)',
+              activeBorderColor: 'var(--color-text-accent-pressed)',
               focusRing: {
-                color: 'var(--color-focus-ring)',
+                color: 'var(--color-stroke-focus)',
               },
             },
             danger: {
@@ -203,38 +190,38 @@ a:not(.p-button):active {
               hoverBorderColor: 'var(--color-fill-danger-hover)',
               activeBorderColor: 'var(--color-fill-danger-pressed)',
               focusRing: {
-                color: 'var(--color-danger-950)',
+                color: 'var(--color-stroke-focus-danger)',
               },
             },
           },
           outlined: {
             plain: {
-              hoverBackground: 'var(--color-neutral-0)',
-              activeBackground: 'var(--color-neutral-0)',
+              color: 'var(--color-text-accent-default)',
+              hoverBackground: 'var(--color-white)',
+              activeBackground: 'var(--color-white)',
               borderColor: 'currentcolor',
-              color: 'var(--color-text-primary-default)',
             },
             primary: {
-              hoverBackground: 'var(--color-neutral-0)',
-              activeBackground: 'var(--color-neutral-0)',
+              color: 'var(--color-text-accent-default)',
+              hoverBackground: 'var(--color-white)',
+              activeBackground: 'var(--color-white)',
               borderColor: 'currentcolor',
-              color: 'var(--color-text-primary-default)',
             },
             danger: {
-              hoverBackground: 'var(--color-neutral-0)',
-              activeBackground: 'var(--color-neutral-0)',
-              borderColor: 'currentcolor',
               color: 'var(--color-text-danger-default)',
+              hoverBackground: 'var(--color-white)',
+              activeBackground: 'var(--color-white)',
+              borderColor: 'currentcolor',
             },
           },
           text: {
             plain: {
-              color: 'var(--color-fill-primary-default)',
+              color: 'var(--color-text-accent-default)',
               hoverBackground: 'transparent',
               activeBackground: 'transparent',
             },
             primary: {
-              color: 'var(--color-fill-primary-default)',
+              color: 'var(--color-text-accent-default)',
               hoverBackground: 'transparent',
               activeBackground: 'transparent',
             },
@@ -245,9 +232,9 @@ a:not(.p-button):active {
             },
           },
           link: {
-            color: 'var(--color-fill-primary-default)',
-            hoverColor: 'var(--color-text-primary-hover)',
-            activeColor: 'var(--color-text-primary-pressed)',
+            color: 'var(--color-text-accent-default)',
+            hoverColor: 'var(--color-text-accent-hover)',
+            activeColor: 'var(--color-text-accent-pressed)',
           },
         },
         dark: {
@@ -256,14 +243,14 @@ a:not(.p-button):active {
               color: 'var(--color-text-inverse)',
               hoverColor: 'var(--color-text-inverse)',
               activeColor: 'var(--color-text-inverse)',
-              background: 'var(--color-fill-primary-default)',
-              hoverBackground: 'var(--color-fill-primary-hover)',
-              activeBackground: 'var(--color-fill-primary-pressed)',
-              borderColor: 'var(--color-fill-primary-default)',
-              hoverBorderColor: 'var(--color-fill-primary-hover)',
-              activeBorderColor: 'var(--color-fill-primary-pressed)',
+              background: 'var(--color-text-accent-default)',
+              hoverBackground: 'var(--color-text-accent-hover)',
+              activeBackground: 'var(--color-text-accent-pressed)',
+              borderColor: 'var(--color-text-accent-default)',
+              hoverBorderColor: 'var(--color-text-accent-hover)',
+              activeBorderColor: 'var(--color-text-accent-pressed)',
               focusRing: {
-                color: 'var(--color-focus-ring)',
+                color: 'var(--color-stroke-focus)',
               },
             },
             danger: {
@@ -272,43 +259,43 @@ a:not(.p-button):active {
               activeColor: 'var(--color-text-danger-pressed)',
               background: 'var(--color-fill-danger-default)',
               hoverBackground: 'var(--color-fill-danger-hover)',
-              activeBackground: 'var(--color-fill-danger-pressed)',
+              activeBackground: 'var(--color-text-danger-pressed)',
               borderColor: 'var(--color-fill-danger-default)',
               hoverBorderColor: 'var(--color-fill-danger-hover)',
-              activeBorderColor: 'var(--color-fill-danger-pressed)',
+              activeBorderColor: 'var(--color-text-danger-pressed)',
               focusRing: {
-                color: 'var(--color-danger-950)',
+                color: 'var(--color-stroke-focus-danger)',
               },
             },
           },
           outlined: {
             plain: {
-              hoverBackground: 'var(--color-neutral-0)',
-              activeBackground: 'var(--color-neutral-0)',
+              color: 'var(--color-text-accent-default)',
+              hoverBackground: 'var(--color-white)',
+              activeBackground: 'var(--color-white)',
               borderColor: 'currentcolor',
-              color: 'var(--color-text-primary-default)',
             },
             primary: {
-              hoverBackground: 'var(--color-neutral-0)',
-              activeBackground: 'var(--color-neutral-0)',
+              color: 'var(--color-text-accent-default)',
+              hoverBackground: 'var(--color-white)',
+              activeBackground: 'var(--color-white)',
               borderColor: 'currentcolor',
-              color: 'var(--color-text-primary-default)',
             },
             danger: {
-              hoverBackground: 'var(--color-neutral-0)',
-              activeBackground: 'var(--color-neutral-0)',
+              color: 'var(--color-text-accent-default)',
+              hoverBackground: 'var(--color-white)',
+              activeBackground: 'var(--color-white)',
               borderColor: 'currentcolor',
-              color: 'var(--color-text-danger-default)',
             },
           },
           text: {
             plain: {
-              color: 'var(--color-fill-primary-default)',
+              color: 'var(--color-text-accent-default)',
               hoverBackground: 'transparent',
               activeBackground: 'transparent',
             },
             primary: {
-              color: 'var(--color-fill-primary-default)',
+              color: 'var(--color-text-accent-default)',
               hoverBackground: 'transparent',
               activeBackground: 'transparent',
             },
@@ -321,7 +308,7 @@ a:not(.p-button):active {
           link: {
             color: 'var(--color-fill-primary-default)',
             hoverColor: 'var(--color-text-primary-hover)',
-            activeColor: 'var(--color-text-primary-pressed)',
+            activeColor: 'var(--color-text-accent-pressed)',
           },
         },
       },
@@ -651,7 +638,7 @@ a:not(.p-button):active {
       950: 'var(--color-primary-950)',
     },
     focusRing: {
-      color: 'var(--color-focus-ring)',
+      color: 'var(--color-stroke-focus)',
       width: '2px',
       offset: '2px',
     },

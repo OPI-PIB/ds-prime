@@ -45,9 +45,11 @@
 		"@opi/eslint-config-typescript": "^5.0.0",
 		"@opi/prettier-config": "^3.0.0",
 		"eslint": "^9.0.0",
+		"eslint-config-prettier": "^10.1.8",
 		"husky": "^9.0.0",
 		"lint-staged": "^16.0.0",
 		"prettier": "^3.0.0",
+		"prettier-plugin-tailwindcss": "^0.7.2",
 		"typescript": "^5.0.0"
 	}
 }
