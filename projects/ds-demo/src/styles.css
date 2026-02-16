@@ -24,3 +24,18 @@ h3 {
 h4 {
   @apply text-b2-medium;
 }
+
+a:not(.p-button) {
+  color: var(--color-text-accent-default);
+  outline-color: var(--color-stroke-focus);
+  outline-offset: 4px;
+  outline-width: 2px;
+}
+
+a:not(.p-button):hover {
+  color: var(--color-text-accent-hover);
+}
+
+a:not(.p-button):active {
+  color: var(--color-text-accent-pressed);
+}
