@@ -29,22 +29,17 @@ export const routesComponents: Routes = [
     path: 'separator',
     loadComponent: () => import('./+separator/separator'),
   },
+  {
+    path: 'tabs',
+    loadComponent: () => import('./+tabs/tabs'),
+  },
   /* Misc */
   {
     path: 'badge',
     loadComponent: () => import('./+badge/badge'),
   },
-  /* TODO */
   {
-    path: 'datepicker',
-    loadComponent: () => import('./+datepicker/datepicker'),
-  },
-  {
-    path: 'textarea',
-    loadComponent: () => import('./+textarea/textarea'),
-  },
-  {
-    path: 'text-field',
-    loadComponent: () => import('./+text-field/text-field'),
+    path: 'tag',
+    loadComponent: () => import('./+tag/tag'),
   },
 ];

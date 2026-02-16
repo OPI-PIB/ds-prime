@@ -498,6 +498,10 @@ export const DsPrime = definePreset(Aura, {
 	}
 }
 
+.p-toggleswitch:not(.p-toggleswitch-checked) .p-toggleswitch-handle:empty {
+  transform: scale(.7)
+}
+
 .p-toggleswitch.p-disabled {
 	--p-toggleswitch-border-color: var(--color-stroke-disabled);
 	--p-toggleswitch-checked-border-color: var(--color-stroke-disabled);
@@ -582,6 +586,121 @@ export const DsPrime = definePreset(Aura, {
         },
       },
     },
+    tabs: {
+      css: `
+.p-tablist.w-full .p-tab {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.p-tablist-tab-list {
+  gap: var(--p-tabs-tab-gap);
+}
+
+.p-tab.p-disabled {
+  --p-tabs-tab-color: var(--color-text-disabled);
+}
+
+.p-tab-active {
+  --p-tabs-tab-font-weight: var(--font-weight-semibold);
+  --p-tabs-tab-border-width: 0 0 4px 0;
+}
+`,
+      colorScheme: {
+        light: {
+          tablist: {
+            borderWidth: '0',
+          },
+          tab: {
+            color: 'var(--color-neutral-600)',
+            hoverColor: 'var(--color-neutral-950)',
+            activeColor: 'var(--color-neutral-950)',
+            fontWeight: 'var(--font-weight-regular)',
+            activeBorderColor: 'var(--color-stroke-active)',
+            borderWidth: '0 0 2px 0',
+            gap: '3px',
+            margin: '0',
+            padding: '.5rem 1.125rem',
+            borderColor: 'var(--color-stroke-default)',
+            hoverBorderColor: 'var(--color-stroke-default)',
+          },
+        },
+      },
+    },
+    badge: {
+      root: {
+        borderRadius: 'var(--radius-full)',
+      },
+      colorScheme: {
+        light: {
+          primary: {
+            background: 'var(--color-text-danger-default)',
+            color: 'var(--color-fill-danger-default)',
+          },
+          contrast: {
+            background: 'var(--color-fill-danger-default)',
+            color: 'var(--color-text-danger-default)',
+          },
+        },
+        dark: {
+          primary: {
+            background: 'var(--color-text-danger-default)',
+            color: 'var(--color-fill-danger-default)',
+          },
+          contrast: {
+            background: 'var(--color-fill-danger-default)',
+            color: 'var(--color-text-danger-default)',
+          },
+        },
+      },
+    },
+    tag: {
+      css: `
+.p-tag-orange {
+  --p-tag-primary-color: var(--color-orange-text);
+  --p-tag-primary-background: var(--color-orange-bg);
+}
+.p-tag-lime {
+  --p-tag-primary-color: var(--color-lime-text);
+  --p-tag-primary-background: var(--color-lime-bg);
+}
+.p-tag-teal {
+  --p-tag-primary-color: var(--color-teal-text);
+  --p-tag-primary-background: var(--color-teal-bg);
+}
+.p-tag-cyan {
+  --p-tag-primary-color: var(--color-cyan-text);
+  --p-tag-primary-background: var(--color-cyan-bg);
+}
+.p-tag-indigo {
+  --p-tag-primary-color: var(--color-indigo-text);
+  --p-tag-primary-background: var(--color-indigo-bg);
+}
+.p-tag-violet {
+  --p-tag-primary-color: var(--color-violet-text);
+  --p-tag-primary-background: var(--color-violet-bg);
+}
+.p-tag-purple {
+  --p-tag-primary-color: var(--color-purple-text);
+  --p-tag-primary-background: var(--color-purple-bg);
+}
+.p-tag-fuchsia {
+  --p-tag-primary-color: var(--color-fuchsia-text);
+  --p-tag-primary-background: var(--color-fuchsia-bg);
+}
+.p-tag-pink {
+  --p-tag-primary-color: var(--color-pink-text);
+  --p-tag-primary-background: var(--color-pink-bg);
+}
+      `,
+      root: {
+        fontSize: '0.875rem',
+        fontWeight: 'var(--font-weight-regular)',
+      },
+      icon: {
+        size: '1.2em',
+      },
+    },
     inputtext: {
       css: `
 :root,
@@ -650,23 +769,6 @@ export const DsPrime = definePreset(Aura, {
       icon: {
         sm: {
           size: '20px',
-        },
-      },
-    },
-    badge: {
-      root: {
-        borderRadius: 'var(--radius-full)',
-      },
-      colorScheme: {
-        light: {
-          primary: {
-            background: 'var(--color-text-danger-default)',
-            color: 'var(--color-fill-danger-default)',
-          },
-          contrast: {
-            background: 'var(--color-fill-danger-default)',
-            color: 'var(--color-text-danger-default)',
-          },
         },
       },
     },
