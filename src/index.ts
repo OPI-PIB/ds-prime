@@ -49,7 +49,7 @@ export const DsPrime = definePreset(Aura, {
   },
   components: {
     button: {
-      css: ({ dt }) => `
+      css: `
 :root,
 :host {
 	--button-font-weight: var(--font-weight-regular);
@@ -151,10 +151,6 @@ export const DsPrime = definePreset(Aura, {
   color: var(--color-text-accent-disabled);
 }
 
-.p-button-neutral:not(:disabled) {
-  color: ${dt('button.neutral.color')}; 
-}
-
 .p-button-fab {
   --p-button-padding-x: var(--button-fab-padding-x); 
   --p-button-lg-padding-x: var(--button-fab-lg-padding-x); 
@@ -179,11 +175,6 @@ export const DsPrime = definePreset(Aura, {
           paddingY: 'var(--button-lg-padding-y)',
           paddingX: 'var(--button-lg-padding-x)',
           iconOnlyWidth: 'var(--button-cta-size)',
-        },
-      },
-      extend: {
-        neutral: {
-          color: 'var(--color-text-secondary)',
         },
       },
       colorScheme: {
@@ -215,6 +206,20 @@ export const DsPrime = definePreset(Aura, {
               activeBorderColor: 'var(--color-fill-danger-pressed)',
               focusRing: {
                 color: 'var(--color-stroke-focus-danger)',
+              },
+            },
+            secondary: {
+              color: 'var(--color-text-inverse)',
+              hoverColor: 'var(--color-text-inverse)',
+              activeColor: 'var(--color-text-inverse)',
+              background: 'var(--color-fill-utility-default)',
+              hoverBackground: 'var(--color-fill-utility-hover)',
+              activeBackground: 'var(--color-fill-utility-pressed)',
+              borderColor: 'var(--color-fill-utility-default)',
+              hoverBorderColor: 'var(--color-fill-utility-hover)',
+              activeBorderColor: 'var(--color-fill-utility-pressed)',
+              focusRing: {
+                color: 'var(--color-stroke-focus)',
               },
             },
           },
@@ -251,6 +256,11 @@ export const DsPrime = definePreset(Aura, {
             },
             danger: {
               color: 'var(--color-text-danger-default)',
+              hoverBackground: 'transparent',
+              activeBackground: 'transparent',
+            },
+            secondary: {
+              color: 'var(--color-text-secondary)',
               hoverBackground: 'transparent',
               activeBackground: 'transparent',
             },
