@@ -86,6 +86,14 @@ export const DsPrime = definePreset(Aura, {
   --p-button-lg-padding-x: 0;
 }
 
+.p-button-icon-only.p-button-secondary:not(.p-button-text) {
+  --ds-icon-size: 1.5rem;
+}
+
+.p-button-icon-only.p-button-secondary.p-button-sm:not(.p-button-text) {
+  --ds-icon-size: 1.25rem;
+}
+
 .p-button:is(.p-button-text, .p-button-link) {
   --p-button-icon-only-width: auto;
   --p-button-lg-icon-only-width: auto;
@@ -133,11 +141,13 @@ export const DsPrime = definePreset(Aura, {
 
 .p-button.p-button-text:not(:disabled):hover {
 	--p-button-text-primary-color: var(--color-text-accent-hover);
+  --p-button-text-secondary-color: var(--color-text-accent-hover);
 	--p-button-text-danger-color: var(--color-text-danger-hover);
 }
 
 .p-button.p-button-text:not(:disabled):active {
 	--p-button-text-primary-color: var(--color-text-accent-pressed);
+  --p-button-text-secondary-color: var(--color-text-accent-pressed);
 	--p-button-text-danger-color: var(--color-text-danger-pressed);
 }
 
@@ -301,6 +311,20 @@ export const DsPrime = definePreset(Aura, {
                 color: 'var(--color-stroke-focus-danger)',
               },
             },
+            secondary: {
+              color: 'var(--color-text-inverse)',
+              hoverColor: 'var(--color-text-inverse)',
+              activeColor: 'var(--color-text-inverse)',
+              background: 'var(--color-fill-utility-default)',
+              hoverBackground: 'var(--color-fill-utility-hover)',
+              activeBackground: 'var(--color-fill-utility-pressed)',
+              borderColor: 'var(--color-fill-utility-default)',
+              hoverBorderColor: 'var(--color-fill-utility-hover)',
+              activeBorderColor: 'var(--color-fill-utility-pressed)',
+              focusRing: {
+                color: 'var(--color-stroke-focus)',
+              },
+            },
           },
           outlined: {
             plain: {
@@ -335,6 +359,11 @@ export const DsPrime = definePreset(Aura, {
             },
             danger: {
               color: 'var(--color-text-danger-default)',
+              hoverBackground: 'transparent',
+              activeBackground: 'transparent',
+            },
+            secondary: {
+              color: 'var(--color-text-secondary)',
               hoverBackground: 'transparent',
               activeBackground: 'transparent',
             },

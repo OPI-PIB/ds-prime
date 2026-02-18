@@ -147,6 +147,8 @@
 .ds-img-cloud{background-image: url('cloud.svg');}
 .ds-icon-code-snippet{mask-image: url('code-snippet.svg');}
 .ds-img-code-snippet{background-image: url('code-snippet.svg');}
+.ds-icon-coins-hand{mask-image: url('coins-hand.svg');}
+.ds-img-coins-hand{background-image: url('coins-hand.svg');}
 .ds-icon-colors{mask-image: url('colors.svg');}
 .ds-img-colors{background-image: url('colors.svg');}
 .ds-icon-columns{mask-image: url('columns.svg');}

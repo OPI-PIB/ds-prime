@@ -1,7 +1,15 @@
 @reference '@opi/ds/tailwind';
 
-.hint a:not(:active) {
+.hint a {
   @apply text-text-secondary;
+}
+
+.hint a:hover {
+  @apply text-text-accent-hover;
+}
+
+.hint a:active {
+  @apply text-text-accent-pressed;
 }
 
 .hint.disabled a,
