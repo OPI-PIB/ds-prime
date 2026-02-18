@@ -49,16 +49,58 @@ export const DsPrime = definePreset(Aura, {
   },
   components: {
     button: {
-      css: `
+      css: ({ dt }) => `
 :root,
 :host {
 	--button-font-weight: var(--font-weight-regular);
 	--button-text-size: 1rem;
-  --button-size: 48px; 
-	--button-p: 12px; 
+  --button-size: 48px;
 	--button-cta-text-size: 1.125rem;
   --button-cta-size: 56px;
-	--button-cta-p: 16px;
+  --button-small-size: 36px;
+  --button-padding-x: 22px;
+  --button-padding-y: 0;
+  --button-sm-padding-x: 4px;
+  --button-sm-padding-y: 0;
+  --button-lg-padding-x: 28px;
+  --button-lg-padding-y: 0;
+  --button-fab-padding-x: 10px;
+  --button-fab-lg-padding-x: 16px;
+}
+
+.p-button:not(.p-button-text, .p-button-link) {
+  min-height: var(--button-size);
+}
+
+.p-button-sm:not(.p-button-text, .p-button-link) {
+  min-height: var(--button-small-size);
+}
+
+.p-button-lg:not(.p-button-text, .p-button-link) {
+  min-height: var(--button-cta-size);
+}
+
+.p-button-icon-only {
+  --p-button-padding-x: 0;
+  --p-button-sm-padding-x: 0;
+  --p-button-lg-padding-x: 0;
+}
+
+.p-button:is(.p-button-text, .p-button-link) {
+  --p-button-icon-only-width: auto;
+  --p-button-lg-icon-only-width: auto;
+  --p-button-padding-x: 0;
+  --p-button-sm-padding-x: 0;
+  --p-button-lg-padding-x: 0;
+}
+
+@media (width > 45rem) {
+	:root,
+	:host { 
+    --button-size: 44px;
+	  --button-cta-text-size: 1.25rem;
+    --button-small-size: 32px;
+	}
 }
 
 .p-button.p-button-outlined {
@@ -70,20 +112,6 @@ export const DsPrime = definePreset(Aura, {
 	border-width: var(--border-width);
 }
 
-.p-button:not(.p-button-text, .p-button-link) {
-  min-height: var(--button-size);
-}
-
-.p-button-lg:not(.p-button-text, .p-button-link) {
-  min-height: var(--button-cta-size);
-}
-
-.p-button-text,
-.p-button-link { 
-	--p-button-padding-x: 0;
-	--p-button-padding-y: 0;
-}
-
 .p-button-link:not(:disabled) .p-button-label,
 .p-button-text:not(:disabled):hover {
 	text-decoration-line: var(--link-text-decoration);
@@ -91,15 +119,6 @@ export const DsPrime = definePreset(Aura, {
 	text-decoration-style: solid;
 	text-underline-offset: 25%;
 	text-underline-position: from-font;
-}
-
-@media (width > 45rem) {
-	:root,
-	:host {
-		--button-p: 10px; 
-    --button-size: 44px; 
-	  --button-cta-text-size: 1.25rem;
-	} 
 }
 
 .p-button.p-button-outlined:not(:disabled):hover {
@@ -131,20 +150,40 @@ export const DsPrime = definePreset(Aura, {
 .p-button:is(.p-button-text, .p-button-outlined):disabled {
   color: var(--color-text-accent-disabled);
 }
+
+.p-button-neutral:not(:disabled) {
+  color: ${dt('button.neutral.color')}; 
+}
+
+.p-button-fab {
+  --p-button-padding-x: var(--button-fab-padding-x); 
+  --p-button-lg-padding-x: var(--button-fab-lg-padding-x); 
+}
 			`,
       root: {
         label: {
           fontWeight: 'var(--button-font-weight)',
         },
         borderRadius: 'var(--radius-default)',
-        paddingY: 'var(--button-p)',
-        paddingX: 'var(--button-p)',
+        paddingY: 'var(--button-padding-y)',
+        paddingX: 'var(--button-padding-x)',
         iconOnlyWidth: 'var(--button-size)',
+        sm: {
+          fontSize: 'var(--button-text-size)',
+          paddingY: 'var(--button-sm-padding-y)',
+          paddingX: 'var(--button-sm-padding-x)',
+          iconOnlyWidth: 'var(--button-small-size)',
+        },
         lg: {
           fontSize: 'var(--button-cta-text-size)',
-          paddingY: 'var(--button-cta-p)',
-          paddingX: 'var(--button-cta-p)',
+          paddingY: 'var(--button-lg-padding-y)',
+          paddingX: 'var(--button-lg-padding-x)',
           iconOnlyWidth: 'var(--button-cta-size)',
+        },
+      },
+      extend: {
+        neutral: {
+          color: 'var(--color-text-secondary)',
         },
       },
       colorScheme: {
@@ -217,9 +256,9 @@ export const DsPrime = definePreset(Aura, {
             },
           },
           link: {
-            color: 'var(--color-text-accent-default)',
-            hoverColor: 'var(--color-text-accent-hover)',
-            activeColor: 'var(--color-text-accent-pressed)',
+            color: 'var(--color-text-link-default)',
+            hoverColor: 'var(--color-text-link-hover)',
+            activeColor: 'var(--color-text-link-pressed)',
           },
         },
         dark: {
@@ -291,9 +330,9 @@ export const DsPrime = definePreset(Aura, {
             },
           },
           link: {
-            color: 'var(--color-text-accent-default)',
-            hoverColor: 'var(--color-text-accent-hover)',
-            activeColor: 'var(--color-text-accent-pressed)',
+            color: 'var(--color-text-link-default)',
+            hoverColor: 'var(--color-text-link-hover)',
+            activeColor: 'var(--color-text-link-pressed)',
           },
         },
       },

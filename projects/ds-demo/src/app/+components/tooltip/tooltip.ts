@@ -3,8 +3,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { TooltipModule } from 'primeng/tooltip';
 
 @Component({
-	selector: 'app-tooltip',
-	imports: [TooltipModule, InputTextModule],
-	templateUrl: './tooltip.html'
+  selector: 'app-tooltip',
+  imports: [TooltipModule, InputTextModule],
+  templateUrl: './tooltip.html',
 })
-export class Tooltip {}
+export default class Tooltip {}

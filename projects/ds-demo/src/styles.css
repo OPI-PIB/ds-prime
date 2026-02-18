@@ -26,16 +26,16 @@ h4 {
 }
 
 a:not(.p-button) {
-  color: var(--color-text-accent-default);
+  color: var(--color-text-link-default);
   outline-color: var(--color-stroke-focus);
   outline-offset: 4px;
   outline-width: 2px;
 }
 
 a:not(.p-button):hover {
-  color: var(--color-text-accent-hover);
+  color: var(--color-text-link-hover);
 }
 
 a:not(.p-button):active {
-  color: var(--color-text-accent-pressed);
+  color: var(--color-text-link-pressed);
 }

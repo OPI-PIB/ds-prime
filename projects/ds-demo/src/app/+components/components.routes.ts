@@ -24,6 +24,10 @@ export const routesComponents: Routes = [
     path: 'fab',
     loadComponent: () => import('./+fab/fab'),
   },
+  {
+    path: 'icon-button',
+    loadComponent: () => import('./+icon-button/icon-button'),
+  },
   /* Panel */
   {
     path: 'separator',
