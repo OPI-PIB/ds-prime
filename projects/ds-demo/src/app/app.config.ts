@@ -29,7 +29,7 @@ export const appConfig: ApplicationConfig = {
         preset: DsPrime,
         options: {
           prefix: 'p',
-          darkModeSelector: 'system',
+          darkModeSelector: false,
           cssLayer: {
             name: 'primeng',
             order: 'tw, primeng, ds',

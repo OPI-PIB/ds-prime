@@ -668,11 +668,17 @@ export const DsPrime = definePreset(Aura, {
       css: `
 .p-tablist.w-full .p-tab {
   flex-grow: 1;
-  text-align: center;
+  justify-content: center;
 }
 
 .p-tablist-tab-list {
   gap: var(--p-tabs-tab-gap);
+}
+
+.p-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .p-tab.p-disabled {
@@ -684,23 +690,36 @@ export const DsPrime = definePreset(Aura, {
   --p-tabs-tab-border-width: 0 0 4px 0;
 }
 `,
+      tablist: {
+        borderWidth: '0',
+      },
+      tab: {
+        borderWidth: '0 0 2px 0',
+        gap: '3px',
+        margin: '0',
+        padding: '.5rem 1.125rem',
+      },
       colorScheme: {
         light: {
-          tablist: {
-            borderWidth: '0',
-          },
           tab: {
             color: 'var(--color-neutral-600)',
             hoverColor: 'var(--color-neutral-950)',
             activeColor: 'var(--color-neutral-950)',
             fontWeight: 'var(--font-weight-regular)',
             activeBorderColor: 'var(--color-stroke-active)',
-            borderWidth: '0 0 2px 0',
-            gap: '3px',
-            margin: '0',
-            padding: '.5rem 1.125rem',
             borderColor: 'var(--color-stroke-default)',
-            hoverBorderColor: 'var(--color-stroke-default)',
+            hoverBorderColor: 'var(--color-stroke-hover)',
+          },
+        },
+        dark: {
+          tab: {
+            color: 'var(--color-neutral-600)',
+            hoverColor: 'var(--color-neutral-950)',
+            activeColor: 'var(--color-neutral-950)',
+            fontWeight: 'var(--font-weight-regular)',
+            activeBorderColor: 'var(--color-stroke-active)',
+            borderColor: 'var(--color-stroke-default)',
+            hoverBorderColor: 'var(--color-stroke-hover)',
           },
         },
       },

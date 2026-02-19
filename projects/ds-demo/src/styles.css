@@ -4,7 +4,7 @@
 @import '@opi/ds/tailwind';
 
 body {
-  @apply text-text-primary bg-white dark:bg-black dark:text-white;
+  @apply text-text-primary bg-white;
 
   font-family: var(--font-sans);
 }
