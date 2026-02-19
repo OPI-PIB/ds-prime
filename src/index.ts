@@ -688,6 +688,7 @@ export const DsPrime = definePreset(Aura, {
 .p-tab-active {
   --p-tabs-tab-font-weight: var(--font-weight-semibold);
   --p-tabs-tab-border-width: 0 0 4px 0;
+  --p-tabs-tab-padding: .5rem 1.125rem 0.375rem;
 }
 `,
       tablist: {
